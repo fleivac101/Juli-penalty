@@ -32,30 +32,46 @@ body::before{
   pointer-events:none;z-index:0;
 }
 
+/* ===== PANTALLAS ===== */
 .screen{display:none;position:relative;z-index:1;}
 .screen.active{display:block;}
 
-/* ===== MAPA ===== */
-#mapScreen{max-width:420px;margin:0 auto;padding:12px;}
-#mapHeader{display:flex;justify-content:space-between;align-items:center;padding:8px 0 12px;}
+/* ===== PANTALLA MAPA ===== */
+#mapScreen{
+max-width:420px;margin:0 auto;padding:12px;
+}
+#mapHeader{
+display:flex;justify-content:space-between;align-items:center;padding:8px 0 12px;
+}
 #mapTitulo{
 font-family:‘Bebas Neue’,sans-serif;font-size:26px;letter-spacing:2px;
 background:linear-gradient(135deg,var(–amarillo),#f97316);
 -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 }
 #mapStats{display:flex;gap:8px;}
-.badge{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:4px 10px;font-size:12px;font-weight:700;}
+.badge{
+background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);
+border-radius:20px;padding:4px 10px;font-size:12px;font-weight:700;
+}
 .badge span{color:var(–amarillo);}
 
+/* Selector idioma */
 #langRow{display:flex;gap:8px;margin-bottom:14px;}
-.lbtn{flex:1;padding:10px;border:2px solid transparent;border-radius:12px;font-family:‘Nunito’,sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all .3s;color:#fff;}
+.lbtn{
+flex:1;padding:10px;border:2px solid transparent;border-radius:12px;
+font-family:‘Nunito’,sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all .3s;color:#fff;
+}
 .lbtn.en{background:rgba(0,48,135,.4);border-color:rgba(0,48,135,.6);}
 .lbtn.it{background:rgba(0,140,69,.4);border-color:rgba(0,140,69,.6);}
 .lbtn.active.en{background:#003087;border-color:#fff;box-shadow:0 0 15px rgba(0,48,135,.8);}
 .lbtn.active.it{background:#008c45;border-color:#fff;box-shadow:0 0 15px rgba(0,140,69,.8);}
 
+/* Ligas / Mundos */
 .liga-section{margin-bottom:18px;}
-.liga-header{display:flex;align-items:center;gap:10px;margin-bottom:10px;padding:10px 14px;border-radius:14px;}
+.liga-header{
+display:flex;align-items:center;gap:10px;margin-bottom:10px;
+padding:10px 14px;border-radius:14px;
+}
 .liga-header.bronco{background:linear-gradient(135deg,rgba(180,83,9,.3),rgba(120,53,15,.2));border:1px solid rgba(180,83,9,.4);}
 .liga-header.plata{background:linear-gradient(135deg,rgba(100,116,139,.3),rgba(71,85,105,.2));border:1px solid rgba(100,116,139,.4);}
 .liga-header.oro{background:linear-gradient(135deg,rgba(161,138,0,.3),rgba(120,90,0,.2));border:1px solid rgba(161,138,0,.4);}
@@ -64,32 +80,53 @@ background:linear-gradient(135deg,var(–amarillo),#f97316);
 .liga-info h3{font-family:‘Bebas Neue’,sans-serif;font-size:18px;letter-spacing:1px;}
 .liga-info p{font-size:11px;color:var(–gris);text-transform:uppercase;letter-spacing:1px;}
 
-.niveles-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;padding:0 4px;}
-.nivel-card{aspect-ratio:1;border-radius:14px;border:2px solid transparent;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:all .25s;position:relative;overflow:hidden;font-family:‘Bebas Neue’,sans-serif;}
-.nivel-card.bloqueado{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.08);cursor:not-allowed;}
+/* Niveles grid */
+.niveles-grid{
+display:grid;grid-template-columns:repeat(5,1fr);gap:8px;
+padding:0 4px;
+}
+.nivel-card{
+aspect-ratio:1;border-radius:14px;border:2px solid transparent;
+display:flex;flex-direction:column;align-items:center;justify-content:center;
+cursor:pointer;transition:all .25s;position:relative;overflow:hidden;
+font-family:‘Bebas Neue’,sans-serif;
+}
+.nivel-card.bloqueado{
+background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.08);cursor:not-allowed;
+}
 .nivel-card.bloqueado .nnum{color:rgba(255,255,255,.2);font-size:18px;}
-.nivel-card.disponible{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2);}
+.nivel-card.disponible{
+background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2);
+}
 .nivel-card.disponible:hover{transform:scale(1.06);background:rgba(255,255,255,.14);}
 .nivel-card.completado{border-color:var(–verde-claro);background:rgba(22,163,74,.15);}
 .nivel-card.completado:hover{transform:scale(1.06);}
 .nivel-card.perfecto{border-color:var(–amarillo);background:rgba(251,191,36,.15);}
-.nivel-card.actual{border-color:var(–amarillo);background:rgba(251,191,36,.2);box-shadow:0 0 16px rgba(251,191,36,.4);animation:pulso .8s ease infinite alternate;}
+.nivel-card.actual{
+border-color:var(–amarillo);background:rgba(251,191,36,.2);
+box-shadow:0 0 16px rgba(251,191,36,.4);animation:pulso .8s ease infinite alternate;
+}
 @keyframes pulso{from{box-shadow:0 0 10px rgba(251,191,36,.3);}to{box-shadow:0 0 22px rgba(251,191,36,.6);}}
 .nnum{font-size:20px;line-height:1;}
 .nestrellas{font-size:10px;margin-top:2px;min-height:12px;}
 .nbloqueo{font-size:16px;opacity:.3;}
-.nivel-card .ntip{display:none;position:absolute;bottom:-28px;left:50%;transform:translateX(-50%);background:#1e293b;border:1px solid rgba(255,255,255,.2);border-radius:6px;padding:3px 8px;font-size:10px;white-space:nowrap;color:#fff;z-index:10;pointer-events:none;}
-.nivel-card:hover .ntip{display:block;}
 
-/* ===== JUEGO ===== */
+/* ===== PANTALLA JUEGO ===== */
 #gameScreen{max-width:420px;margin:0 auto;padding:10px;}
 #gameHeader{display:flex;justify-content:space-between;align-items:center;padding:6px 0 8px;}
-#btnVolver{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:6px 12px;color:#fff;font-size:13px;cursor:pointer;font-family:‘Nunito’,sans-serif;font-weight:700;}
+#btnVolver{
+background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);
+border-radius:10px;padding:6px 12px;color:#fff;font-size:13px;cursor:pointer;font-family:‘Nunito’,sans-serif;font-weight:700;
+}
 #gameInfo{text-align:right;}
 #gameNivelLabel{font-family:‘Bebas Neue’,sans-serif;font-size:16px;color:var(–amarillo);letter-spacing:1px;}
 #gameStats2{display:flex;gap:8px;justify-content:flex-end;margin-top:2px;}
 
-#difBarra{display:flex;align-items:center;gap:8px;margin-bottom:8px;padding:6px 12px;border-radius:10px;background:rgba(255,255,255,.05);}
+/* Barra dificultad */
+#difBarra{
+display:flex;align-items:center;gap:8px;margin-bottom:8px;
+padding:6px 12px;border-radius:10px;background:rgba(255,255,255,.05);
+}
 #difLabel{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;}
 #difLabel.facil{color:#22c55e;}
 #difLabel.medio{color:#fbbf24;}
@@ -99,224 +136,104 @@ background:linear-gradient(135deg,var(–amarillo),#f97316);
 #progRondaFill{height:100%;background:linear-gradient(90deg,var(–amarillo),#f97316);border-radius:3px;transition:width .4s ease;}
 #progRondaTexto{font-size:11px;color:var(–gris);white-space:nowrap;}
 
-#tarjeta{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:16px;margin:8px 0;text-align:center;}
+/* Pregunta */
+#tarjeta{
+background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+border-radius:20px;padding:16px;margin:8px 0;text-align:center;
+}
 #catLabel{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(–gris);margin-bottom:4px;}
-#wordBig{font-family:‘Bebas Neue’,sans-serif;font-size:44px;letter-spacing:3px;line-height:1.1;margin-bottom:2px;}
+#wordBig{
+font-family:‘Bebas Neue’,sans-serif;font-size:44px;letter-spacing:3px;line-height:1.1;
+margin-bottom:2px;
+}
 #wordEj{font-size:12px;color:var(–gris);font-style:italic;}
 
+/* Opciones */
 #opciones{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0;}
-.opt{padding:13px 8px;border:2px solid rgba(255,255,255,.15);border-radius:14px;background:rgba(255,255,255,.06);color:#fff;font-family:‘Nunito’,sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;}
+.opt{
+padding:13px 8px;border:2px solid rgba(255,255,255,.15);border-radius:14px;
+background:rgba(255,255,255,.06);color:#fff;font-family:‘Nunito’,sans-serif;
+font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;
+}
 .opt:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3);transform:scale(1.03);}
 .opt.correcta{background:rgba(22,163,74,.5);border-color:var(–verde-claro);box-shadow:0 0 20px rgba(22,163,74,.5);animation:popVerde .4s ease;}
 .opt.incorrecta{background:rgba(239,68,68,.4);border-color:var(–rojo);animation:shake .4s ease;}
 @keyframes popVerde{0%{transform:scale(1);}50%{transform:scale(1.08);}100%{transform:scale(1);}}
 @keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-8px);}75%{transform:translateX(8px);}}
 
+/* Puntos flotantes */
 #ptsFlotante{text-align:center;font-family:‘Bebas Neue’,sans-serif;font-size:22px;min-height:28px;color:var(–amarillo);}
 
+/* Power */
 #powerSec{display:none;margin:6px 0;}
 #powerLbl{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(–gris);margin-bottom:4px;text-align:center;}
 #powerWrap{height:20px;background:rgba(255,255,255,.08);border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.1);}
 #powerFill{height:100%;width:0%;border-radius:10px;transition:width .04s;}
 
+/* Racha dots */
 #rachaDots{display:flex;justify-content:center;gap:5px;margin:5px 0;min-height:16px;}
 .rdot{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.15);transition:all .3s;}
 .rdot.ok{background:var(–verde-claro);box-shadow:0 0 6px var(–verde-claro);}
 .rdot.fail{background:var(–rojo);box-shadow:0 0 6px var(–rojo);}
 .rdot.now{background:var(–amarillo);box-shadow:0 0 8px var(–amarillo);animation:pulso .6s infinite alternate;}
 
-/* ===== CANCHA MEJORADA ===== */
-#canchaWrap{
-position:relative;
-width:100%;max-width:400px;
-margin:8px auto;
-perspective:600px;
-}
+/* Cancha */
 #cancha{
-width:100%;height:200px;
-background:linear-gradient(180deg,#14532d 0%,#166534 30%,#15803d 60%,#16a34a 100%);
-border-radius:16px;position:relative;overflow:hidden;
-border:3px solid rgba(255,255,255,.2);
-transition:transform .15s ease;
+width:100%;max-width:400px;height:185px;
+background:linear-gradient(180deg,#14532d 0%,#15803d 40%,#16a34a 100%);
+border-radius:16px;position:relative;overflow:visible;
+border:3px solid rgba(255,255,255,.2);margin:8px auto;
 }
-/* Líneas del campo */
-#cancha::after{
+#cancha::before{
 content:’’;position:absolute;bottom:0;left:10%;right:10%;
-height:58px;border:2px solid rgba(255,255,255,.25);border-top:none;border-radius:0 0 8px 8px;
+height:55px;border:2px solid rgba(255,255,255,.2);border-top:none;border-radius:0 0 8px 8px;
 }
-/* Césped degradado */
-.grass-lines{
-position:absolute;inset:0;
-background:repeating-linear-gradient(
-0deg,
-transparent,transparent 20px,
-rgba(0,0,0,.06) 20px,rgba(0,0,0,.06) 40px
-);
-pointer-events:none;
-}
-
 #arco{
-position:absolute;top:-10px;left:50%;transform:translateX(-50%);
-width:160px;height:70px;border:5px solid white;border-bottom:none;
-border-radius:4px 4px 0 0;background:rgba(255,255,255,.05);z-index:2;
-box-shadow:0 0 20px rgba(255,255,255,.1);
+position:absolute;top:-8px;left:50%;transform:translateX(-50%);
+width:155px;height:65px;border:5px solid white;border-bottom:none;
+border-radius:4px 4px 0 0;background:rgba(255,255,255,.07);z-index:2;
 }
-/* Red del arco */
 #arco::after{
 content:’’;position:absolute;inset:0;
-background-image:linear-gradient(rgba(255,255,255,.15) 1px,transparent 1px),
-linear-gradient(90deg,rgba(255,255,255,.15) 1px,transparent 1px);
-background-size:14px 12px;
+background-image:linear-gradient(rgba(255,255,255,.12) 1px,transparent 1px),
+linear-gradient(90deg,rgba(255,255,255,.12) 1px,transparent 1px);
+background-size:16px 13px;
 }
-/* Flash de la red al hacer gol */
-#arco.gol-flash{
-animation:redFlash .5s ease;
-}
-@keyframes redFlash{
-0%{background:rgba(255,255,255,.05);}
-30%{background:rgba(255,255,0,.4);box-shadow:0 0 40px rgba(255,220,0,.8),inset 0 0 30px rgba(255,220,0,.5);}
-100%{background:rgba(255,255,255,.05);}
-}
-
 #arquero{
-position:absolute;top:14px;left:50%;transform:translateX(-50%);
-font-size:34px;transition:left .35s cubic-bezier(.34,1.56,.64,1),transform .35s,font-size .2s;
-z-index:3;filter:drop-shadow(0 3px 6px rgba(0,0,0,.6));
-transform-origin:center bottom;
+position:absolute;top:12px;left:50%;transform:translateX(-50%);
+font-size:30px;transition:left .4s cubic-bezier(.34,1.56,.64,1),transform .4s;z-index:3;
+filter:drop-shadow(0 2px 4px rgba(0,0,0,.5));
 }
-#arquero.save-anim{
-animation:saveJump .5s ease;
-}
-@keyframes saveJump{
-0%{transform:translateX(-50%) scaleX(1);}
-30%{transform:translateX(-50%) scale(1.4) rotate(-5deg);}
-60%{transform:translateX(-50%) scale(1.5) rotate(5deg);}
-100%{transform:translateX(-50%) scaleX(1);}
-}
-#arquero.miss-anim{
-animation:missFlop .5s ease;
-}
-@keyframes missFlop{
-0%,100%{transform:translateX(-50%);}
-50%{transform:translateX(-50%) translateY(6px) rotate(15deg);}
-}
-
-/* Balón con trayectoria animada */
 #balon{
-position:absolute;bottom:20px;left:50%;transform:translateX(-50%);
-font-size:28px;z-index:4;
-filter:drop-shadow(0 4px 8px rgba(0,0,0,.7));
-transition:none; /* controlado por JS */
-transform-origin:center;
-}
-#balon.kick{
-animation:balonKick var(–kick-dur, .55s) cubic-bezier(.2,.8,.4,1) forwards;
-}
-/* Trayectoria con arco */
-@keyframes balonKick{
-0%{transform:translateX(-50%) scale(1) rotate(0deg);}
-40%{transform:translateX(var(–bx-mid, -50%)) translateY(var(–by-mid, -60px)) scale(0.9) rotate(180deg);}
-100%{transform:translateX(var(–bx-end, -50%)) translateY(var(–by-end, -130px)) scale(0.6) rotate(540deg);}
-}
-#balon.saved{
-animation:balonSaved .5s cubic-bezier(.34,1.56,.64,1) forwards;
-}
-@keyframes balonSaved{
-0%{transform:translateX(var(–bx-end,-50%)) translateY(var(–by-end,-130px)) scale(0.6);}
-60%{transform:translateX(calc(var(–bx-end,-50%) + 20px)) translateY(-80px) scale(0.9) rotate(-90deg);}
-100%{transform:translateX(calc(var(–bx-end,-50%) + 60px)) translateY(0px) scale(1) rotate(0deg);}
+position:absolute;bottom:18px;left:50%;transform:translateX(-50%);
+font-size:26px;transition:all .6s cubic-bezier(.34,1.56,.64,1);z-index:4;
+filter:drop-shadow(0 3px 6px rgba(0,0,0,.6));
 }
 
-/* Humo/partículas del disparo */
-.kick-particle{
-position:absolute;pointer-events:none;z-index:5;
-font-size:18px;
-animation:particleFloat 0.8s ease-out forwards;
-}
-@keyframes particleFloat{
-0%{opacity:1;transform:translate(0,0) scale(1);}
-100%{opacity:0;transform:translate(var(–px,20px),var(–py,-60px)) scale(.3);}
-}
-
-/* Efecto de cámara shake */
-#canchaWrap.shake{animation:cameraShake .4s ease;}
-@keyframes cameraShake{
-0%,100%{transform:translateX(0) translateY(0);}
-20%{transform:translateX(-4px) translateY(2px);}
-40%{transform:translateX(4px) translateY(-3px);}
-60%{transform:translateX(-3px) translateY(1px);}
-80%{transform:translateX(3px) translateY(-1px);}
-}
-
-/* Zoom al portero */
-#canchaWrap.zoom-gk #arquero{font-size:48px;transition:font-size .2s;}
-#canchaWrap.zoom-gk .zoom-overlay{opacity:1;}
-.zoom-overlay{
-position:absolute;inset:0;border-radius:14px;
-background:linear-gradient(0deg,rgba(0,0,0,.5) 0%,transparent 50%);
-opacity:0;transition:opacity .3s;pointer-events:none;
-}
-
-/* Marcador tipo TV */
-#scoreboard{
-position:absolute;top:8px;right:8px;z-index:6;
-background:rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.2);
-border-radius:8px;padding:3px 8px;
-font-family:‘Bebas Neue’,sans-serif;font-size:16px;letter-spacing:1px;
-color:white;
-backdrop-filter:blur(4px);
-}
-#scoreboard .gol-count{color:var(–amarillo);}
-
-/* Ondas expansivas al gol */
-.gol-ring{
-position:absolute;border-radius:50%;
-border:3px solid rgba(255,220,0,.8);
-pointer-events:none;
-animation:expandRing .8s ease-out forwards;
-}
-@keyframes expandRing{
-0%{width:10px;height:10px;opacity:1;transform:translate(-50%,-50%) scale(1);}
-100%{width:180px;height:180px;opacity:0;transform:translate(-50%,-50%) scale(1);}
-}
-
-/* Texto en cancha */
-#canchaMsg{
-position:absolute;bottom:0;left:0;right:0;
-text-align:center;padding:6px;
-font-family:‘Bebas Neue’,sans-serif;font-size:28px;letter-spacing:3px;
-opacity:0;transition:opacity .3s;z-index:8;
-text-shadow:0 2px 8px rgba(0,0,0,.9);
-}
-#canchaMsg.show{opacity:1;}
-#canchaMsg.gol{color:#fde047;text-shadow:0 0 20px rgba(253,224,71,.8),0 2px 8px rgba(0,0,0,.9);}
-#canchaMsg.fail{color:#f87171;}
-
-/* ===== ZONAS ===== */
+/* Zonas */
 #zonas{display:flex;gap:8px;margin:6px 0;display:none;}
 .zbtn{
-flex:1;padding:14px 4px;border:2px solid rgba(255,255,255,.2);border-radius:12px;
-background:rgba(255,255,255,.07);color:#fff;font-size:22px;cursor:pointer;transition:all .2s;
+flex:1;padding:12px 4px;border:2px solid rgba(255,255,255,.2);border-radius:12px;
+background:rgba(255,255,255,.07);color:#fff;font-size:20px;cursor:pointer;transition:all .2s;
 font-family:‘Nunito’,sans-serif;font-weight:700;
-position:relative;overflow:hidden;
 }
-.zbtn::before{
-content:’’;position:absolute;inset:0;
-background:radial-gradient(circle at center,rgba(255,255,255,.2),transparent 70%);
-opacity:0;transition:opacity .2s;
-}
-.zbtn:hover::before{opacity:1;}
-.zbtn:hover{border-color:rgba(255,255,255,.5);transform:scale(1.05);}
-.zbtn:active{transform:scale(.97);}
+.zbtn:hover{background:rgba(255,255,255,.15);transform:scale(1.05);}
 .zbtn span{display:block;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(–gris);margin-top:2px;}
 
-#resTexto{text-align:center;font-family:‘Bebas Neue’,sans-serif;font-size:36px;letter-spacing:3px;min-height:46px;transition:all .3s;}
+/* Resultado */
+#resTexto{
+text-align:center;font-family:‘Bebas Neue’,sans-serif;font-size:36px;
+letter-spacing:3px;min-height:46px;transition:all .3s;
+}
 #resTexto.gol{color:var(–verde-claro);text-shadow:0 0 30px rgba(34,197,94,.8);}
 #resTexto.fail{color:var(–rojo);text-shadow:0 0 20px rgba(239,68,68,.6);}
 #comboDiv{text-align:center;font-family:‘Bebas Neue’,sans-serif;font-size:18px;color:var(–amarillo);min-height:24px;letter-spacing:2px;}
 
-/* ===== MODAL ===== */
-#modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:50;justify-content:center;align-items:center;}
+/* ===== MODAL RESUMEN ===== */
+#modal{
+display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);
+z-index:50;justify-content:center;align-items:center;
+}
 #modal.open{display:flex;}
 #modalCard{
 background:linear-gradient(135deg,#0f2444,#080c18);
@@ -331,19 +248,34 @@ animation:entrada .5s cubic-bezier(.34,1.56,.64,1);
 #modalStats{font-size:15px;color:var(–gris);margin:6px 0;}
 #modalMsg{font-size:16px;font-weight:700;margin:8px 0 16px;}
 .modalBtns{display:flex;gap:10px;justify-content:center;}
-.mbtn{padding:12px 22px;border:none;border-radius:50px;font-family:‘Bebas Neue’,sans-serif;font-size:18px;letter-spacing:1px;cursor:pointer;transition:all .2s;}
+.mbtn{
+padding:12px 22px;border:none;border-radius:50px;
+font-family:‘Bebas Neue’,sans-serif;font-size:18px;letter-spacing:1px;cursor:pointer;transition:all .2s;
+}
 .mbtn.pri{background:linear-gradient(135deg,var(–amarillo),#f97316);color:#080c18;}
 .mbtn.sec{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2);}
 .mbtn:hover{transform:scale(1.05);}
 
-.efloat{position:fixed;font-size:26px;pointer-events:none;animation:flotar 1.2s ease-out forwards;z-index:100;}
+/* Emoji volador */
+.efloat{
+position:fixed;font-size:26px;pointer-events:none;
+animation:flotar 1.2s ease-out forwards;z-index:100;
+}
 @keyframes flotar{0%{opacity:1;transform:translateY(0) scale(1);}100%{opacity:0;transform:translateY(-110px) scale(1.5);}}
+
+/* TOOLTIP en nivel card */
+.nivel-card .ntip{
+display:none;position:absolute;bottom:-28px;left:50%;transform:translateX(-50%);
+background:#1e293b;border:1px solid rgba(255,255,255,.2);border-radius:6px;
+padding:3px 8px;font-size:10px;white-space:nowrap;color:#fff;z-index:10;pointer-events:none;
+}
+.nivel-card:hover .ntip{display:block;}
 </style>
 
 </head>
 <body>
 
-<!-- MAPA -->
+<!-- ===== PANTALLA MAPA ===== -->
 
 <div id="mapScreen" class="screen active">
 <div id="mapHeader">
@@ -353,14 +285,16 @@ animation:entrada .5s cubic-bezier(.34,1.56,.64,1);
     <div class="badge">⭐ <span id="totalEstrellas">0</span></div>
   </div>
 </div>
+
 <div id="langRow">
   <button class="lbtn en active" onclick="setLang('en')">🇬🇧 Inglés</button>
   <button class="lbtn it" onclick="setLang('it')">🇮🇹 Italiano</button>
 </div>
+
 <div id="mapContenido"></div>
 </div>
 
-<!-- JUEGO -->
+<!-- ===== PANTALLA JUEGO ===== -->
 
 <div id="gameScreen" class="screen">
 <div id="gameHeader">
@@ -397,18 +331,10 @@ animation:entrada .5s cubic-bezier(.34,1.56,.64,1);
 
 <div id="rachaDots"></div>
 
-<!-- CANCHA MEJORADA -->
-
-<div id="canchaWrap">
-  <div id="cancha">
-    <div class="grass-lines"></div>
-    <div id="arco"></div>
-    <div id="arquero">🧤</div>
-    <div id="balon">⚽</div>
-    <div id="canchaMsg"></div>
-    <div class="zoom-overlay"></div>
-    <div id="scoreboard">⚽ <span class="gol-count" id="sbGoles">0</span>/<span id="sbTotal">5</span></div>
-  </div>
+<div id="cancha">
+  <div id="arco"></div>
+  <div id="arquero">🧤</div>
+  <div id="balon">⚽</div>
 </div>
 
 <div id="zonas">
@@ -420,7 +346,7 @@ animation:entrada .5s cubic-bezier(.34,1.56,.64,1);
 <div id="resTexto"></div>
 </div>
 
-<!-- MODAL -->
+<!-- MODAL RESUMEN -->
 
 <div id="modal">
 <div id="modalCard">
@@ -438,65 +364,17 @@ animation:entrada .5s cubic-bezier(.34,1.56,.64,1);
 
 <script>
 // =========================================================
-// WEB AUDIO — sonidos procedurales
-// =========================================================
-let audioCtx = null;
-function getAudio(){
-  if(!audioCtx) try{ audioCtx = new (window.AudioContext||window.webkitAudioContext)(); }catch(e){}
-  return audioCtx;
-}
-function playTone(freq,type,dur,vol=0.4,delay=0){
-  const ctx = getAudio(); if(!ctx) return;
-  const osc = ctx.createOscillator();
-  const gain = ctx.createGain();
-  osc.connect(gain); gain.connect(ctx.destination);
-  osc.type = type; osc.frequency.setValueAtTime(freq, ctx.currentTime+delay);
-  osc.frequency.exponentialRampToValueAtTime(freq*0.5, ctx.currentTime+delay+dur);
-  gain.gain.setValueAtTime(vol, ctx.currentTime+delay);
-  gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime+delay+dur);
-  osc.start(ctx.currentTime+delay); osc.stop(ctx.currentTime+delay+dur+0.01);
-}
-function soundKick(){
-  // Bajo impacto + silbido breve
-  playTone(120,'sine',.15,.5);
-  playTone(800,'sine',.08,.3,.05);
-  playTone(400,'square',.1,.2,.03);
-}
-function soundGol(){
-  // Fanfarria ascendente
-  [523,659,784,1047].forEach((f,i)=>playTone(f,'sine',.25,.35,i*.1));
-  playTone(200,'sine',.4,.3,.0);
-}
-function soundSave(){
-  // Descenso + metal
-  playTone(600,'sawtooth',.3,.3);
-  playTone(300,'square',.2,.2,.1);
-}
-function soundCorrect(){
-  playTone(880,'sine',.15,.25);
-  playTone(1100,'sine',.15,.2,.1);
-}
-function soundWrong(){
-  playTone(200,'sawtooth',.25,.3);
-}
-
-// =========================================================
-// VOCABULARIO — ~250 palabras por idioma
+// VOCABULARIO — 3 dificultades × 2 idiomas × 100+ palabras
 // =========================================================
 const VOCAB = {
   en: {
     facil: [
-      // Animales
+      // Animales básicos
       {cat:"🐾 Animales",w:"Dog 🐶",t:"Perro",o:["Perro","Gato","Pájaro","Pez"],ej:"The dog barks"},
       {cat:"🐾 Animales",w:"Cat 🐱",t:"Gato",o:["Gato","Perro","Ratón","Conejo"],ej:"The cat sleeps"},
       {cat:"🐾 Animales",w:"Bird 🐦",t:"Pájaro",o:["Pájaro","Pez","Tortuga","Rana"],ej:"A bird can fly"},
       {cat:"🐾 Animales",w:"Fish 🐟",t:"Pez",o:["Pez","Pájaro","Vaca","Cerdo"],ej:"Fish live in water"},
       {cat:"🐾 Animales",w:"Horse 🐴",t:"Caballo",o:["Caballo","Vaca","Toro","Burro"],ej:"She rides a horse"},
-      {cat:"🐾 Animales",w:"Rabbit 🐰",t:"Conejo",o:["Conejo","Ratón","Ardilla","Hámster"],ej:"A white rabbit"},
-      {cat:"🐾 Animales",w:"Bear 🐻",t:"Oso",o:["Oso","Lobo","Zorro","León"],ej:"A big bear"},
-      {cat:"🐾 Animales",w:"Elephant 🐘",t:"Elefante",o:["Elefante","Jirafa","Hipopótamo","Rinoceronte"],ej:"Elephants never forget"},
-      {cat:"🐾 Animales",w:"Cow 🐄",t:"Vaca",o:["Vaca","Toro","Oveja","Cabra"],ej:"The cow gives milk"},
-      {cat:"🐾 Animales",w:"Frog 🐸",t:"Rana",o:["Rana","Sapo","Lagarto","Serpiente"],ej:"The frog jumps"},
       // Colores
       {cat:"🎨 Colores",w:"Red 🔴",t:"Rojo",o:["Rojo","Azul","Verde","Negro"],ej:"The apple is red"},
       {cat:"🎨 Colores",w:"Blue 🔵",t:"Azul",o:["Azul","Rojo","Amarillo","Blanco"],ej:"The sky is blue"},
@@ -504,50 +382,28 @@ const VOCAB = {
       {cat:"🎨 Colores",w:"Yellow 🟡",t:"Amarillo",o:["Amarillo","Naranja","Morado","Rosa"],ej:"The sun is yellow"},
       {cat:"🎨 Colores",w:"White ⬜",t:"Blanco",o:["Blanco","Negro","Gris","Marrón"],ej:"Snow is white"},
       {cat:"🎨 Colores",w:"Black ⬛",t:"Negro",o:["Negro","Blanco","Gris","Azul"],ej:"Night is black"},
-      {cat:"🎨 Colores",w:"Orange 🟠",t:"Naranja",o:["Naranja","Rojo","Amarillo","Rosa"],ej:"An orange sunset"},
-      {cat:"🎨 Colores",w:"Purple 🟣",t:"Morado",o:["Morado","Rosa","Azul","Marrón"],ej:"Purple flowers"},
-      {cat:"🎨 Colores",w:"Pink 🌸",t:"Rosa",o:["Rosa","Rojo","Morado","Naranja"],ej:"Pink dress"},
-      {cat:"🎨 Colores",w:"Brown 🤎",t:"Marrón",o:["Marrón","Gris","Beige","Negro"],ej:"Brown bear"},
-      // Comida
+      // Comida básica
       {cat:"🍎 Comida",w:"Apple 🍎",t:"Manzana",o:["Manzana","Naranja","Uva","Pera"],ej:"An apple a day"},
       {cat:"🍎 Comida",w:"Water 💧",t:"Agua",o:["Agua","Leche","Jugo","Té"],ej:"Drink more water"},
       {cat:"🍎 Comida",w:"Bread 🍞",t:"Pan",o:["Pan","Arroz","Pasta","Torta"],ej:"Fresh bread"},
       {cat:"🍎 Comida",w:"Milk 🥛",t:"Leche",o:["Leche","Agua","Café","Jugo"],ej:"Drink your milk"},
       {cat:"🍎 Comida",w:"Egg 🥚",t:"Huevo",o:["Huevo","Queso","Carne","Pollo"],ej:"Scrambled eggs"},
       {cat:"🍎 Comida",w:"Rice 🍚",t:"Arroz",o:["Arroz","Pan","Pasta","Maíz"],ej:"Rice with chicken"},
-      {cat:"🍎 Comida",w:"Orange 🍊",t:"Naranja",o:["Naranja","Manzana","Limón","Uva"],ej:"Fresh orange juice"},
-      {cat:"🍎 Comida",w:"Cheese 🧀",t:"Queso",o:["Queso","Mantequilla","Crema","Yogurt"],ej:"Cheese pizza"},
-      {cat:"🍎 Comida",w:"Banana 🍌",t:"Plátano",o:["Plátano","Mango","Papaya","Piña"],ej:"Yellow banana"},
-      {cat:"🍎 Comida",w:"Sugar 🍬",t:"Azúcar",o:["Azúcar","Sal","Pimienta","Vinagre"],ej:"Too much sugar"},
       // Números
       {cat:"🔢 Números",w:"One 1️⃣",t:"Uno",o:["Uno","Dos","Tres","Cero"],ej:"Number one!"},
       {cat:"🔢 Números",w:"Two 2️⃣",t:"Dos",o:["Dos","Uno","Tres","Cuatro"],ej:"Two players"},
       {cat:"🔢 Números",w:"Three 3️⃣",t:"Tres",o:["Tres","Dos","Cuatro","Cinco"],ej:"Three goals!"},
       {cat:"🔢 Números",w:"Five 5️⃣",t:"Cinco",o:["Cinco","Cuatro","Seis","Siete"],ej:"High five!"},
       {cat:"🔢 Números",w:"Ten 🔟",t:"Diez",o:["Diez","Nueve","Once","Ocho"],ej:"Count to ten"},
-      {cat:"🔢 Números",w:"Zero 0️⃣",t:"Cero",o:["Cero","Uno","Dos","Tres"],ej:"Zero goals today"},
-      {cat:"🔢 Números",w:"Four 4️⃣",t:"Cuatro",o:["Cuatro","Tres","Cinco","Seis"],ej:"Four seasons"},
-      {cat:"🔢 Números",w:"Seven 7️⃣",t:"Siete",o:["Siete","Seis","Ocho","Nueve"],ej:"Lucky number seven"},
       // Familia
       {cat:"👨‍👩‍👧 Familia",w:"Mother",t:"Madre",o:["Madre","Padre","Hermana","Abuela"],ej:"My mother cooks"},
       {cat:"👨‍👩‍👧 Familia",w:"Father",t:"Padre",o:["Padre","Madre","Hermano","Abuelo"],ej:"My father works"},
       {cat:"👨‍👩‍👧 Familia",w:"Brother",t:"Hermano",o:["Hermano","Hermana","Primo","Tío"],ej:"My brother plays"},
       {cat:"👨‍👩‍👧 Familia",w:"Sister",t:"Hermana",o:["Hermana","Hermano","Prima","Tía"],ej:"My sister sings"},
-      {cat:"👨‍👩‍👧 Familia",w:"Baby 👶",t:"Bebé",o:["Bebé","Niño","Niña","Infante"],ej:"Sweet baby"},
-      {cat:"👨‍👩‍👧 Familia",w:"Uncle",t:"Tío",o:["Tío","Tía","Primo","Abuelo"],ej:"My uncle drives"},
-      {cat:"👨‍👩‍👧 Familia",w:"Aunt",t:"Tía",o:["Tía","Tío","Prima","Abuela"],ej:"My aunt bakes"},
       // Cuerpo
       {cat:"💪 Cuerpo",w:"Hand ✋",t:"Mano",o:["Mano","Pie","Brazo","Dedo"],ej:"Raise your hand"},
       {cat:"💪 Cuerpo",w:"Eye 👁️",t:"Ojo",o:["Ojo","Oído","Nariz","Boca"],ej:"Blue eyes"},
       {cat:"💪 Cuerpo",w:"Mouth 👄",t:"Boca",o:["Boca","Nariz","Oído","Ojo"],ej:"Open your mouth"},
-      {cat:"💪 Cuerpo",w:"Nose 👃",t:"Nariz",o:["Nariz","Boca","Oído","Ojo"],ej:"Red nose"},
-      {cat:"💪 Cuerpo",w:"Leg 🦵",t:"Pierna",o:["Pierna","Brazo","Rodilla","Tobillo"],ej:"Broken leg"},
-      {cat:"💪 Cuerpo",w:"Head 🗣️",t:"Cabeza",o:["Cabeza","Cuello","Cara","Frente"],ej:"Use your head"},
-      // Lugares
-      {cat:"🏙️ Lugares",w:"School 🏫",t:"Escuela",o:["Escuela","Hospital","Banco","Mercado"],ej:"Go to school"},
-      {cat:"🏙️ Lugares",w:"Park 🌳",t:"Parque",o:["Parque","Jardín","Plaza","Bosque"],ej:"Play in the park"},
-      {cat:"🏙️ Lugares",w:"Store 🏪",t:"Tienda",o:["Tienda","Mercado","Centro","Farmacia"],ej:"Go to the store"},
-      {cat:"🏙️ Lugares",w:"Beach 🏖️",t:"Playa",o:["Playa","Montaña","Lago","Río"],ej:"Beach vacation"},
     ],
     medio: [
       // Naturaleza
@@ -556,63 +412,34 @@ const VOCAB = {
       {cat:"🌿 Naturaleza",w:"Forest 🌲",t:"Bosque",o:["Bosque","Desierto","Pradera","Selva"],ej:"Deep in the forest"},
       {cat:"🌿 Naturaleza",w:"Cloud ☁️",t:"Nube",o:["Nube","Lluvia","Tormenta","Viento"],ej:"Dark clouds"},
       {cat:"🌿 Naturaleza",w:"Thunder ⛈️",t:"Trueno",o:["Trueno","Relámpago","Granizo","Nieve"],ej:"I heard thunder"},
-      {cat:"🌿 Naturaleza",w:"Rainbow 🌈",t:"Arcoíris",o:["Arcoíris","Nube","Tormenta","Cielo"],ej:"Beautiful rainbow"},
-      {cat:"🌿 Naturaleza",w:"Desert 🏜️",t:"Desierto",o:["Desierto","Selva","Tundra","Sabana"],ej:"Hot desert"},
-      {cat:"🌿 Naturaleza",w:"Volcano 🌋",t:"Volcán",o:["Volcán","Montaña","Colina","Acantilado"],ej:"Active volcano"},
-      {cat:"🌿 Naturaleza",w:"Island 🏝️",t:"Isla",o:["Isla","Península","Cabo","Bahía"],ej:"Tropical island"},
-      // Casa
+      // Objetos hogar
       {cat:"🏠 Casa",w:"Window 🪟",t:"Ventana",o:["Ventana","Puerta","Pared","Techo"],ej:"Open the window"},
       {cat:"🏠 Casa",w:"Chair 🪑",t:"Silla",o:["Silla","Mesa","Sofá","Cama"],ej:"Sit on the chair"},
       {cat:"🏠 Casa",w:"Bed 🛏️",t:"Cama",o:["Cama","Silla","Mesa","Sofá"],ej:"Go to bed"},
       {cat:"🏠 Casa",w:"Kitchen 🍳",t:"Cocina",o:["Cocina","Baño","Sala","Cuarto"],ej:"Cook in the kitchen"},
       {cat:"🏠 Casa",w:"Door 🚪",t:"Puerta",o:["Puerta","Ventana","Escalera","Piso"],ej:"Close the door"},
-      {cat:"🏠 Casa",w:"Garden 🌻",t:"Jardín",o:["Jardín","Patio","Balcón","Terraza"],ej:"Beautiful garden"},
-      {cat:"🏠 Casa",w:"Garage 🚗",t:"Garaje",o:["Garaje","Cochera","Sótano","Ático"],ej:"Two-car garage"},
-      {cat:"🏠 Casa",w:"Stairs",t:"Escaleras",o:["Escaleras","Pasillo","Balcón","Terraza"],ej:"Climb the stairs"},
       // Ropa
       {cat:"👕 Ropa",w:"Shirt 👕",t:"Camisa",o:["Camisa","Pantalón","Zapato","Sombrero"],ej:"White shirt"},
       {cat:"👕 Ropa",w:"Shoes 👟",t:"Zapatos",o:["Zapatos","Calcetines","Botas","Sandalias"],ej:"New shoes"},
       {cat:"👕 Ropa",w:"Hat 🎩",t:"Sombrero",o:["Sombrero","Gorra","Bufanda","Guantes"],ej:"Wear a hat"},
-      {cat:"👕 Ropa",w:"Jacket 🧥",t:"Chaqueta",o:["Chaqueta","Abrigo","Suéter","Vestido"],ej:"Wear your jacket"},
-      {cat:"👕 Ropa",w:"Pants 👖",t:"Pantalón",o:["Pantalón","Falda","Shorts","Bermuda"],ej:"Blue pants"},
-      {cat:"👕 Ropa",w:"Dress 👗",t:"Vestido",o:["Vestido","Falda","Blusa","Top"],ej:"Red dress"},
-      {cat:"👕 Ropa",w:"Gloves 🧤",t:"Guantes",o:["Guantes","Calcetines","Medias","Botas"],ej:"Warm gloves"},
-      {cat:"👕 Ropa",w:"Scarf 🧣",t:"Bufanda",o:["Bufanda","Gorra","Gorro","Cinturón"],ej:"Wool scarf"},
+      {cat:"👕 Ropa",w:"Jacket 🧥",t:"Chaqueta",o:["Chaqueta","Abrigo","Suéter","Vestido"],ej:"Cold, wear jacket"},
       // Deportes
       {cat:"⚽ Deportes",w:"Soccer ⚽",t:"Fútbol",o:["Fútbol","Básquet","Tenis","Béisbol"],ej:"Play soccer"},
       {cat:"⚽ Deportes",w:"Swimming 🏊",t:"Natación",o:["Natación","Atletismo","Ciclismo","Boxeo"],ej:"I love swimming"},
       {cat:"⚽ Deportes",w:"Team",t:"Equipo",o:["Equipo","Jugador","Árbitro","Estadio"],ej:"Best team ever"},
       {cat:"⚽ Deportes",w:"Goal! ⚽",t:"Gol",o:["Gol","Tiro","Falta","Penal"],ej:"GOAL!"},
-      {cat:"⚽ Deportes",w:"Champion 🏆",t:"Campeón",o:["Campeón","Ganador","Finalista","Competidor"],ej:"World champion"},
-      {cat:"⚽ Deportes",w:"Referee",t:"Árbitro",o:["Árbitro","Entrenador","Delantero","Portero"],ej:"The referee decides"},
-      {cat:"⚽ Deportes",w:"Stadium 🏟️",t:"Estadio",o:["Estadio","Campo","Arena","Pabellón"],ej:"Full stadium"},
-      {cat:"⚽ Deportes",w:"Fitness 🏋️",t:"Ejercicio",o:["Ejercicio","Deporte","Entrenamiento","Rutina"],ej:"Daily fitness"},
-      // Clima
+      // Tiempo/clima
       {cat:"☀️ Clima",w:"Hot 🌡️",t:"Caliente",o:["Caliente","Frío","Tibio","Húmedo"],ej:"Hot summer"},
       {cat:"☀️ Clima",w:"Cold ❄️",t:"Frío",o:["Frío","Caliente","Tibio","Seco"],ej:"Cold winter"},
       {cat:"☀️ Clima",w:"Wind 💨",t:"Viento",o:["Viento","Lluvia","Nieve","Tormenta"],ej:"Strong wind"},
-      {cat:"☀️ Clima",w:"Sunny ☀️",t:"Soleado",o:["Soleado","Nublado","Lluvioso","Tormentoso"],ej:"Sunny day"},
-      {cat:"☀️ Clima",w:"Snow ❄️",t:"Nieve",o:["Nieve","Hielo","Granizo","Lluvia"],ej:"White snow"},
-      {cat:"☀️ Clima",w:"Storm ⛈️",t:"Tormenta",o:["Tormenta","Brisa","Viento","Lluvia"],ej:"Big storm coming"},
-      // Acciones
+      {cat:"☀️ Clima",w:"Season",t:"Temporada",o:["Temporada","Mes","Semana","Año"],ej:"Winter season"},
+      // Verbos
       {cat:"🏃 Acciones",w:"Jump ⬆️",t:"Saltar",o:["Saltar","Correr","Nadar","Volar"],ej:"Jump high!"},
       {cat:"🏃 Acciones",w:"Run 🏃",t:"Correr",o:["Correr","Saltar","Caminar","Caer"],ej:"Run fast"},
       {cat:"🏃 Acciones",w:"Eat 🍽️",t:"Comer",o:["Comer","Beber","Cocinar","Lavar"],ej:"Eat healthy"},
       {cat:"🏃 Acciones",w:"Sleep 😴",t:"Dormir",o:["Dormir","Despertar","Descansar","Soñar"],ej:"Time to sleep"},
       {cat:"🏃 Acciones",w:"Read 📖",t:"Leer",o:["Leer","Escribir","Dibujar","Cantar"],ej:"I love to read"},
       {cat:"🏃 Acciones",w:"Write ✏️",t:"Escribir",o:["Escribir","Leer","Pintar","Borrar"],ej:"Write your name"},
-      {cat:"🏃 Acciones",w:"Swim 🏊",t:"Nadar",o:["Nadar","Bucear","Flotar","Surfear"],ej:"Swim every day"},
-      {cat:"🏃 Acciones",w:"Dance 💃",t:"Bailar",o:["Bailar","Cantar","Tocar","Actuar"],ej:"Dance all night"},
-      {cat:"🏃 Acciones",w:"Sing 🎵",t:"Cantar",o:["Cantar","Bailar","Tocar","Gritar"],ej:"Sing a song"},
-      {cat:"🏃 Acciones",w:"Cook 🍳",t:"Cocinar",o:["Cocinar","Hornear","Freír","Hervir"],ej:"Cook dinner"},
-      {cat:"🏃 Acciones",w:"Drive 🚗",t:"Manejar",o:["Manejar","Conducir","Pilotar","Guiar"],ej:"Drive carefully"},
-      {cat:"🏃 Acciones",w:"Laugh 😂",t:"Reír",o:["Reír","Llorar","Gritar","Susurrar"],ej:"Laugh out loud"},
-      // Transporte
-      {cat:"🚗 Transporte",w:"Car 🚗",t:"Auto",o:["Auto","Camión","Bus","Moto"],ej:"Drive a car"},
-      {cat:"🚗 Transporte",w:"Bus 🚌",t:"Bus",o:["Bus","Tren","Metro","Taxi"],ej:"Take the bus"},
-      {cat:"🚗 Transporte",w:"Train 🚂",t:"Tren",o:["Tren","Bus","Metro","Barco"],ej:"Train station"},
-      {cat:"🚗 Transporte",w:"Bike 🚲",t:"Bicicleta",o:["Bicicleta","Moto","Patín","Scooter"],ej:"Ride a bike"},
-      {cat:"🚗 Transporte",w:"Plane ✈️",t:"Avión",o:["Avión","Helicóptero","Globo","Cohete"],ej:"Flight to Paris"},
     ],
     dificil: [
       // Emociones
@@ -621,57 +448,30 @@ const VOCAB = {
       {cat:"😊 Emociones",w:"Proud 😤",t:"Orgulloso",o:["Orgulloso","Avergonzado","Celoso","Humilde"],ej:"I'm proud of you"},
       {cat:"😊 Emociones",w:"Lonely",t:"Solitario",o:["Solitario","Acompañado","Sociable","Amigable"],ej:"Feeling lonely"},
       {cat:"😊 Emociones",w:"Jealous",t:"Celoso",o:["Celoso","Orgulloso","Tranquilo","Feliz"],ej:"Don't be jealous"},
-      {cat:"😊 Emociones",w:"Excited 🎉",t:"Emocionado",o:["Emocionado","Aburrido","Cansado","Tranquilo"],ej:"So excited!"},
-      {cat:"😊 Emociones",w:"Curious 🤔",t:"Curioso",o:["Curioso","Indiferente","Aburrido","Desinteresado"],ej:"Stay curious"},
-      {cat:"😊 Emociones",w:"Grateful 🙏",t:"Agradecido",o:["Agradecido","Resentido","Indiferente","Ingrato"],ej:"Feel grateful"},
-      {cat:"😊 Emociones",w:"Confident",t:"Seguro",o:["Seguro","Inseguro","Tímido","Dudoso"],ej:"Feel confident"},
       // Tecnología
       {cat:"💻 Tecnología",w:"Screen 📱",t:"Pantalla",o:["Pantalla","Teclado","Ratón","Bocina"],ej:"Broken screen"},
       {cat:"💻 Tecnología",w:"Password 🔑",t:"Contraseña",o:["Contraseña","Usuario","Correo","Red"],ej:"Forgot password"},
       {cat:"💻 Tecnología",w:"Software",t:"Software",o:["Software","Hardware","Sistema","Memoria"],ej:"Install the software"},
       {cat:"💻 Tecnología",w:"Download ⬇️",t:"Descargar",o:["Descargar","Subir","Instalar","Borrar"],ej:"Download the app"},
-      {cat:"💻 Tecnología",w:"Connection 📶",t:"Conexión",o:["Conexión","Señal","Red","Bluetooth"],ej:"No connection"},
-      {cat:"💻 Tecnología",w:"Update 🔄",t:"Actualizar",o:["Actualizar","Restaurar","Reiniciar","Borrar"],ej:"System update"},
-      {cat:"💻 Tecnología",w:"Battery 🔋",t:"Batería",o:["Batería","Cargador","Cable","Adaptador"],ej:"Low battery"},
-      {cat:"💻 Tecnología",w:"Notification 🔔",t:"Notificación",o:["Notificación","Mensaje","Alerta","Recordatorio"],ej:"Turn off notifications"},
       // Profesiones
       {cat:"👨‍⚕️ Profesiones",w:"Doctor 👨‍⚕️",t:"Médico",o:["Médico","Enfermero","Dentista","Farmacéutico"],ej:"See the doctor"},
       {cat:"👨‍⚕️ Profesiones",w:"Teacher 👩‍🏫",t:"Maestro",o:["Maestro","Alumno","Director","Tutor"],ej:"Great teacher"},
       {cat:"👨‍⚕️ Profesiones",w:"Lawyer",t:"Abogado",o:["Abogado","Juez","Fiscal","Notario"],ej:"Need a lawyer"},
       {cat:"👨‍⚕️ Profesiones",w:"Engineer",t:"Ingeniero",o:["Ingeniero","Arquitecto","Mecánico","Electricista"],ej:"Software engineer"},
       {cat:"👨‍⚕️ Profesiones",w:"Chef 👨‍🍳",t:"Chef",o:["Chef","Mesero","Barista","Panadero"],ej:"Top chef"},
-      {cat:"👨‍⚕️ Profesiones",w:"Journalist",t:"Periodista",o:["Periodista","Locutor","Editor","Redactor"],ej:"Investigative journalist"},
-      {cat:"👨‍⚕️ Profesiones",w:"Firefighter 🚒",t:"Bombero",o:["Bombero","Policía","Soldado","Rescatista"],ej:"Brave firefighter"},
-      {cat:"👨‍⚕️ Profesiones",w:"Pilot ✈️",t:"Piloto",o:["Piloto","Copiloto","Azafata","Mecánico"],ej:"Commercial pilot"},
-      {cat:"👨‍⚕️ Profesiones",w:"Designer",t:"Diseñador",o:["Diseñador","Dibujante","Fotógrafo","Ilustrador"],ej:"Graphic designer"},
-      // Frases
+      // Frases útiles
       {cat:"💬 Frases",w:"Please",t:"Por favor",o:["Por favor","Gracias","De nada","Perdón"],ej:"Please help me"},
       {cat:"💬 Frases",w:"Sorry",t:"Lo siento",o:["Lo siento","Perdón","Disculpa","Excúsame"],ej:"I'm sorry"},
       {cat:"💬 Frases",w:"Welcome",t:"Bienvenido",o:["Bienvenido","Hasta luego","Hola","Adiós"],ej:"Welcome home"},
       {cat:"💬 Frases",w:"Congratulations 🎉",t:"Felicitaciones",o:["Felicitaciones","Condolencias","Saludos","Bendiciones"],ej:"Congratulations!"},
-      {cat:"💬 Frases",w:"Good luck! 🍀",t:"Buena suerte",o:["Buena suerte","Bien hecho","Cuídate","Qué pena"],ej:"Good luck!"},
-      {cat:"💬 Frases",w:"Take care",t:"Cuídate",o:["Cuídate","Adiós","Hasta luego","Chao"],ej:"Take care of yourself"},
-      {cat:"💬 Frases",w:"No problem",t:"Sin problema",o:["Sin problema","Con gusto","Claro","Por supuesto"],ej:"No problem at all"},
       // Viajes
       {cat:"✈️ Viajes",w:"Airport ✈️",t:"Aeropuerto",o:["Aeropuerto","Puerto","Terminal","Estación"],ej:"At the airport"},
       {cat:"✈️ Viajes",w:"Passport 📕",t:"Pasaporte",o:["Pasaporte","Visa","Boleto","Maleta"],ej:"Check your passport"},
       {cat:"✈️ Viajes",w:"Luggage 🧳",t:"Equipaje",o:["Equipaje","Maleta","Mochila","Bolso"],ej:"Heavy luggage"},
       {cat:"✈️ Viajes",w:"Hotel 🏨",t:"Hotel",o:["Hotel","Hostal","Motel","Cabana"],ej:"Book a hotel"},
-      {cat:"✈️ Viajes",w:"Map 🗺️",t:"Mapa",o:["Mapa","Guía","Plano","Brújula"],ej:"Read the map"},
-      {cat:"✈️ Viajes",w:"Ticket 🎫",t:"Boleto",o:["Boleto","Pasaje","Entrada","Pase"],ej:"Buy a ticket"},
-      {cat:"✈️ Viajes",w:"Reservation",t:"Reservación",o:["Reservación","Confirmación","Cancelación","Solicitud"],ej:"Make a reservation"},
       // Salud
       {cat:"🏥 Salud",w:"Headache",t:"Dolor de cabeza",o:["Dolor de cabeza","Fiebre","Tos","Mareo"],ej:"I have a headache"},
       {cat:"🏥 Salud",w:"Medicine 💊",t:"Medicina",o:["Medicina","Vitamina","Vacuna","Cirugía"],ej:"Take your medicine"},
-      {cat:"🏥 Salud",w:"Allergy",t:"Alergia",o:["Alergia","Intolerancia","Sensibilidad","Reacción"],ej:"Nut allergy"},
-      {cat:"🏥 Salud",w:"Surgery",t:"Cirugía",o:["Cirugía","Operación","Procedimiento","Tratamiento"],ej:"Heart surgery"},
-      {cat:"🏥 Salud",w:"Exercise 🏋️",t:"Ejercicio",o:["Ejercicio","Deporte","Actividad","Entrenamiento"],ej:"Daily exercise"},
-      // Tiempo/días
-      {cat:"📅 Tiempo",w:"Monday",t:"Lunes",o:["Lunes","Martes","Miércoles","Jueves"],ej:"See you Monday"},
-      {cat:"📅 Tiempo",w:"Weekend",t:"Fin de semana",o:["Fin de semana","Semana","Día festivo","Feriado"],ej:"Long weekend"},
-      {cat:"📅 Tiempo",w:"Yesterday",t:"Ayer",o:["Ayer","Hoy","Mañana","Anteayer"],ej:"It happened yesterday"},
-      {cat:"📅 Tiempo",w:"Tonight",t:"Esta noche",o:["Esta noche","Esta mañana","Esta tarde","Hoy"],ej:"See you tonight"},
-      {cat:"📅 Tiempo",w:"Annual",t:"Anual",o:["Anual","Mensual","Semanal","Diario"],ej:"Annual report"},
     ],
     experto: [
       {cat:"🎓 Avanzado",w:"Nevertheless",t:"Sin embargo",o:["Sin embargo","Por lo tanto","Es decir","Además"],ej:"Nevertheless, I tried"},
@@ -682,28 +482,17 @@ const VOCAB = {
       {cat:"🎓 Avanzado",w:"Sustainable",t:"Sostenible",o:["Sostenible","Renovable","Eficiente","Estable"],ej:"Sustainable energy"},
       {cat:"🎓 Avanzado",w:"Overwhelmed",t:"Abrumado",o:["Abrumado","Relajado","Motivado","Concentrado"],ej:"Feeling overwhelmed"},
       {cat:"🎓 Avanzado",w:"Compromise",t:"Compromiso",o:["Compromiso","Acuerdo","Conflicto","Negación"],ej:"Reach a compromise"},
-      {cat:"🎓 Avanzado",w:"Consequently",t:"Por consiguiente",o:["Por consiguiente","Sin embargo","A pesar de","No obstante"],ej:"Consequently, prices rose"},
-      {cat:"🎓 Avanzado",w:"Approximately",t:"Aproximadamente",o:["Aproximadamente","Exactamente","Parcialmente","Totalmente"],ej:"Approximately 100 people"},
-      {cat:"🎓 Avanzado",w:"Acknowledge",t:"Reconocer",o:["Reconocer","Ignorar","Negar","Evitar"],ej:"Acknowledge your mistakes"},
-      {cat:"🎓 Avanzado",w:"Emphasize",t:"Enfatizar",o:["Enfatizar","Minimizar","Ignorar","Suprimir"],ej:"I want to emphasize"},
-      {cat:"🎓 Avanzado",w:"Perspective",t:"Perspectiva",o:["Perspectiva","Opinión","Visión","Punto de vista"],ej:"Different perspective"},
-      {cat:"🎓 Avanzado",w:"Implement",t:"Implementar",o:["Implementar","Planear","Diseñar","Evaluar"],ej:"Implement the plan"},
-      {cat:"🎓 Avanzado",w:"Fundamental",t:"Fundamental",o:["Fundamental","Secundario","Opcional","Trivial"],ej:"Fundamental right"},
-      {cat:"🎓 Avanzado",w:"Innovative",t:"Innovador",o:["Innovador","Tradicional","Conservador","Obsoleto"],ej:"Innovative solution"},
     ]
   },
   it: {
     facil: [
+      // Animales
       {cat:"🐾 Animali",w:"Cane 🐶",t:"Perro",o:["Perro","Gato","Pájaro","Pez"],ej:"Il cane abbaia"},
       {cat:"🐾 Animali",w:"Gatto 🐱",t:"Gato",o:["Gato","Perro","Ratón","Conejo"],ej:"Il gatto dorme"},
       {cat:"🐾 Animali",w:"Uccello 🐦",t:"Pájaro",o:["Pájaro","Pez","Tortuga","Rana"],ej:"L'uccello canta"},
       {cat:"🐾 Animali",w:"Pesce 🐟",t:"Pez",o:["Pez","Pájaro","Vaca","Cerdo"],ej:"Il pesce nuota"},
       {cat:"🐾 Animali",w:"Cavallo 🐴",t:"Caballo",o:["Caballo","Vaca","Oso","León"],ej:"Il cavallo corre"},
       {cat:"🐾 Animali",w:"Mucca 🐄",t:"Vaca",o:["Vaca","Toro","Cabra","Oveja"],ej:"La mucca dà latte"},
-      {cat:"🐾 Animali",w:"Coniglio 🐰",t:"Conejo",o:["Conejo","Ratón","Ardilla","Hámster"],ej:"Un coniglio bianco"},
-      {cat:"🐾 Animali",w:"Orso 🐻",t:"Oso",o:["Oso","Lobo","Zorro","León"],ej:"Un grande orso"},
-      {cat:"🐾 Animali",w:"Leone 🦁",t:"León",o:["León","Tigre","Leopardo","Pantera"],ej:"Il re leone"},
-      {cat:"🐾 Animali",w:"Farfalla 🦋",t:"Mariposa",o:["Mariposa","Abeja","Mosca","Hormiga"],ej:"Una bella farfalla"},
       // Colores
       {cat:"🎨 Colori",w:"Rosso 🔴",t:"Rojo",o:["Rojo","Azul","Verde","Negro"],ej:"La mela è rossa"},
       {cat:"🎨 Colori",w:"Blu 🔵",t:"Azul",o:["Azul","Rojo","Verde","Morado"],ej:"Il cielo è blu"},
@@ -711,10 +500,6 @@ const VOCAB = {
       {cat:"🎨 Colori",w:"Giallo 🟡",t:"Amarillo",o:["Amarillo","Naranja","Rosa","Morado"],ej:"Il sole è giallo"},
       {cat:"🎨 Colori",w:"Nero ⬛",t:"Negro",o:["Negro","Blanco","Gris","Marrón"],ej:"La notte è nera"},
       {cat:"🎨 Colori",w:"Bianco ⬜",t:"Blanco",o:["Blanco","Negro","Gris","Beige"],ej:"La neve è bianca"},
-      {cat:"🎨 Colori",w:"Arancione 🟠",t:"Naranja",o:["Naranja","Rojo","Amarillo","Rosa"],ej:"Un tramonto arancione"},
-      {cat:"🎨 Colori",w:"Viola 🟣",t:"Morado",o:["Morado","Rosa","Azul","Marrón"],ej:"Fiori viola"},
-      {cat:"🎨 Colori",w:"Rosa 🌸",t:"Rosa",o:["Rosa","Rojo","Morado","Naranja"],ej:"Un vestito rosa"},
-      {cat:"🎨 Colori",w:"Grigio",t:"Gris",o:["Gris","Beige","Marrón","Negro"],ej:"Un cielo grigio"},
       // Comida
       {cat:"🍎 Cibo",w:"Mela 🍎",t:"Manzana",o:["Manzana","Naranja","Uva","Pera"],ej:"La mela è rossa"},
       {cat:"🍎 Cibo",w:"Acqua 💧",t:"Agua",o:["Agua","Leche","Jugo","Café"],ej:"Bevo acqua"},
@@ -722,35 +507,20 @@ const VOCAB = {
       {cat:"🍎 Cibo",w:"Latte 🥛",t:"Leche",o:["Leche","Agua","Jugo","Té"],ej:"Il latte è bianco"},
       {cat:"🍎 Cibo",w:"Uovo 🥚",t:"Huevo",o:["Huevo","Queso","Pollo","Carne"],ej:"Uova strapazzate"},
       {cat:"🍎 Cibo",w:"Pizza 🍕",t:"Pizza",o:["Pizza","Pasta","Risotto","Gelato"],ej:"Pizza italiana!"},
-      {cat:"🍎 Cibo",w:"Gelato 🍦",t:"Helado",o:["Helado","Torta","Galleta","Brownie"],ej:"Gelato al cioccolato"},
-      {cat:"🍎 Cibo",w:"Formaggio 🧀",t:"Queso",o:["Queso","Mantequilla","Crema","Yogur"],ej:"Formaggio italiano"},
-      {cat:"🍎 Cibo",w:"Pasta 🍝",t:"Pasta",o:["Pasta","Arroz","Pan","Polenta"],ej:"Pasta al sugo"},
-      {cat:"🍎 Cibo",w:"Vino 🍷",t:"Vino",o:["Vino","Cerveza","Agua","Jugo"],ej:"Vino rosso"},
       // Números
       {cat:"🔢 Numeri",w:"Uno 1️⃣",t:"Uno",o:["Uno","Dos","Tres","Cuatro"],ej:"Numero uno!"},
       {cat:"🔢 Numeri",w:"Due 2️⃣",t:"Dos",o:["Dos","Uno","Tres","Cuatro"],ej:"Due gol!"},
       {cat:"🔢 Numeri",w:"Tre 3️⃣",t:"Tres",o:["Tres","Dos","Cuatro","Cinco"],ej:"Tre amici"},
       {cat:"🔢 Numeri",w:"Cinque 5️⃣",t:"Cinco",o:["Cinco","Cuatro","Seis","Siete"],ej:"Cinque stelle"},
       {cat:"🔢 Numeri",w:"Dieci 🔟",t:"Diez",o:["Diez","Nueve","Once","Ocho"],ej:"Dieci minuti"},
-      {cat:"🔢 Numeri",w:"Zero 0️⃣",t:"Cero",o:["Cero","Uno","Dos","Tres"],ej:"Zero punti"},
-      {cat:"🔢 Numeri",w:"Quattro 4️⃣",t:"Cuatro",o:["Cuatro","Tres","Cinco","Seis"],ej:"Quattro stagioni"},
-      {cat:"🔢 Numeri",w:"Sette 7️⃣",t:"Siete",o:["Siete","Seis","Ocho","Nueve"],ej:"Numero fortunato"},
       // Familia
       {cat:"👨‍👩‍👧 Famiglia",w:"Madre",t:"Madre",o:["Madre","Padre","Hermana","Abuela"],ej:"Mia madre cucina"},
       {cat:"👨‍👩‍👧 Famiglia",w:"Padre",t:"Padre",o:["Padre","Madre","Hermano","Abuelo"],ej:"Mio padre lavora"},
       {cat:"👨‍👩‍👧 Famiglia",w:"Fratello",t:"Hermano",o:["Hermano","Hermana","Primo","Tío"],ej:"Mio fratello gioca"},
       {cat:"👨‍👩‍👧 Famiglia",w:"Sorella",t:"Hermana",o:["Hermana","Hermano","Prima","Tía"],ej:"Mia sorella canta"},
-      {cat:"👨‍👩‍👧 Famiglia",w:"Nonna 👵",t:"Abuela",o:["Abuela","Abuelo","Bisabuela","Tía"],ej:"La mia nonna cucina"},
-      {cat:"👨‍👩‍👧 Famiglia",w:"Nonno 👴",t:"Abuelo",o:["Abuelo","Abuela","Bisabuelo","Tío"],ej:"Il mio nonno pesca"},
-      {cat:"👨‍👩‍👧 Famiglia",w:"Zio",t:"Tío",o:["Tío","Tía","Primo","Abuelo"],ej:"Mio zio guida"},
-      {cat:"👨‍👩‍👧 Famiglia",w:"Zia",t:"Tía",o:["Tía","Tío","Prima","Abuela"],ej:"Mia zia cucina"},
       // Cuerpo
       {cat:"💪 Corpo",w:"Mano ✋",t:"Mano",o:["Mano","Pie","Brazo","Dedo"],ej:"Alza la mano"},
       {cat:"💪 Corpo",w:"Occhio 👁️",t:"Ojo",o:["Ojo","Oído","Nariz","Boca"],ej:"Occhi azzurri"},
-      {cat:"💪 Corpo",w:"Bocca 👄",t:"Boca",o:["Boca","Nariz","Oído","Ojo"],ej:"Apri la bocca"},
-      {cat:"💪 Corpo",w:"Naso 👃",t:"Nariz",o:["Nariz","Boca","Oído","Ojo"],ej:"Naso rosso"},
-      {cat:"💪 Corpo",w:"Piede 🦶",t:"Pie",o:["Pie","Pierna","Rodilla","Talón"],ej:"Piedi stanchi"},
-      {cat:"💪 Corpo",w:"Testa 🗣️",t:"Cabeza",o:["Cabeza","Cuello","Cara","Frente"],ej:"Usa la testa"},
     ],
     medio: [
       // Naturaleza
@@ -760,36 +530,22 @@ const VOCAB = {
       {cat:"🌿 Natura",w:"Nuvola ☁️",t:"Nube",o:["Nube","Lluvia","Tormenta","Viento"],ej:"Nuvole grigie"},
       {cat:"🌿 Natura",w:"Mare 🌊",t:"Mar",o:["Mar","Lago","Río","Montaña"],ej:"Il mare è bello"},
       {cat:"🌿 Natura",w:"Luna 🌙",t:"Luna",o:["Luna","Sol","Estrella","Planeta"],ej:"La luna piena"},
-      {cat:"🌿 Natura",w:"Arcobaleno 🌈",t:"Arcoíris",o:["Arcoíris","Nube","Tormenta","Cielo"],ej:"Un bell'arcobaleno"},
-      {cat:"🌿 Natura",w:"Deserto 🏜️",t:"Desierto",o:["Desierto","Selva","Tundra","Sabana"],ej:"Il deserto caldo"},
-      {cat:"🌿 Natura",w:"Vulcano 🌋",t:"Volcán",o:["Volcán","Montaña","Colina","Acantilado"],ej:"Vulcano attivo"},
-      {cat:"🌿 Natura",w:"Isola 🏝️",t:"Isla",o:["Isla","Península","Cabo","Bahía"],ej:"Isola tropicale"},
       // Casa
       {cat:"🏠 Casa",w:"Finestra 🪟",t:"Ventana",o:["Ventana","Puerta","Pared","Techo"],ej:"Apri la finestra"},
       {cat:"🏠 Casa",w:"Sedia 🪑",t:"Silla",o:["Silla","Mesa","Sofá","Cama"],ej:"Siediti sulla sedia"},
       {cat:"🏠 Casa",w:"Letto 🛏️",t:"Cama",o:["Cama","Silla","Mesa","Sofá"],ej:"Vado a letto"},
       {cat:"🏠 Casa",w:"Cucina 🍳",t:"Cocina",o:["Cocina","Baño","Sala","Cuarto"],ej:"In cucina"},
       {cat:"🏠 Casa",w:"Porta 🚪",t:"Puerta",o:["Puerta","Ventana","Escalera","Piso"],ej:"Chiudi la porta"},
-      {cat:"🏠 Casa",w:"Giardino 🌻",t:"Jardín",o:["Jardín","Patio","Balcón","Terraza"],ej:"Un bel giardino"},
-      {cat:"🏠 Casa",w:"Garage 🚗",t:"Garaje",o:["Garaje","Cochera","Sótano","Ático"],ej:"Due posti in garage"},
-      {cat:"🏠 Casa",w:"Scale",t:"Escaleras",o:["Escaleras","Pasillo","Balcón","Terraza"],ej:"Sali le scale"},
       // Ropa
       {cat:"👕 Vestiti",w:"Camicia 👕",t:"Camisa",o:["Camisa","Pantalón","Zapato","Sombrero"],ej:"Camicia bianca"},
       {cat:"👕 Vestiti",w:"Scarpe 👟",t:"Zapatos",o:["Zapatos","Calcetines","Botas","Sandalias"],ej:"Scarpe nuove"},
       {cat:"👕 Vestiti",w:"Cappello 🎩",t:"Sombrero",o:["Sombrero","Gorra","Bufanda","Guantes"],ej:"Indossa il cappello"},
       {cat:"👕 Vestiti",w:"Giacca 🧥",t:"Chaqueta",o:["Chaqueta","Abrigo","Suéter","Vestido"],ej:"Metti la giacca"},
-      {cat:"👕 Vestiti",w:"Pantaloni 👖",t:"Pantalón",o:["Pantalón","Falda","Shorts","Bermuda"],ej:"Pantaloni jeans"},
-      {cat:"👕 Vestiti",w:"Vestito 👗",t:"Vestido",o:["Vestido","Falda","Blusa","Top"],ej:"Un bel vestito"},
-      {cat:"👕 Vestiti",w:"Guanti 🧤",t:"Guantes",o:["Guantes","Calcetines","Medias","Botas"],ej:"Guanti caldi"},
-      {cat:"👕 Vestiti",w:"Sciarpa 🧣",t:"Bufanda",o:["Bufanda","Gorra","Gorro","Cinturón"],ej:"Sciarpa di lana"},
-      // Calcio
+      // Fútbol
       {cat:"⚽ Calcio",w:"Calcio ⚽",t:"Fútbol",o:["Fútbol","Básquet","Tenis","Rugby"],ej:"Giocare a calcio"},
       {cat:"⚽ Calcio",w:"Squadra",t:"Equipo",o:["Equipo","Jugador","Árbitro","Estadio"],ej:"La mia squadra"},
       {cat:"⚽ Calcio",w:"Rete! ⚽",t:"Gol",o:["Gol","Tiro","Falta","Penal"],ej:"Rete!"},
       {cat:"⚽ Calcio",w:"Stadio 🏟️",t:"Estadio",o:["Estadio","Campo","Pista","Arena"],ej:"Allo stadio"},
-      {cat:"⚽ Calcio",w:"Campione 🏆",t:"Campeón",o:["Campeón","Ganador","Finalista","Competidor"],ej:"Campione del mondo"},
-      {cat:"⚽ Calcio",w:"Arbitro",t:"Árbitro",o:["Árbitro","Entrenador","Delantero","Portero"],ej:"L'arbitro fischia"},
-      {cat:"⚽ Calcio",w:"Portiere 🧤",t:"Portero",o:["Portero","Delantero","Defensa","Mediocampista"],ej:"Il portiere para"},
       // Verbos
       {cat:"🏃 Azioni",w:"Correre 🏃",t:"Correr",o:["Correr","Saltar","Nadar","Volar"],ej:"Corro ogni giorno"},
       {cat:"🏃 Azioni",w:"Dormire 😴",t:"Dormir",o:["Dormir","Comer","Beber","Cantar"],ej:"Devo dormire"},
@@ -797,24 +553,10 @@ const VOCAB = {
       {cat:"🏃 Azioni",w:"Cantare 🎵",t:"Cantar",o:["Cantar","Bailar","Tocar","Gritar"],ej:"Mi piace cantare"},
       {cat:"🏃 Azioni",w:"Leggere 📖",t:"Leer",o:["Leer","Escribir","Dibujar","Cantar"],ej:"Leggo un libro"},
       {cat:"🏃 Azioni",w:"Scrivere ✏️",t:"Escribir",o:["Escribir","Leer","Pintar","Borrar"],ej:"Scrivi il tuo nome"},
-      {cat:"🏃 Azioni",w:"Nuotare 🏊",t:"Nadar",o:["Nadar","Bucear","Flotar","Surfear"],ej:"Nuoto ogni giorno"},
-      {cat:"🏃 Azioni",w:"Ballare 💃",t:"Bailar",o:["Bailar","Cantar","Tocar","Actuar"],ej:"Balliamo insieme"},
-      {cat:"🏃 Azioni",w:"Cucinare 🍳",t:"Cocinar",o:["Cocinar","Hornear","Freír","Hervir"],ej:"Cucino la cena"},
-      {cat:"🏃 Azioni",w:"Ridere 😂",t:"Reír",o:["Reír","Llorar","Gritar","Susurrar"],ej:"Rido sempre"},
-      {cat:"🏃 Azioni",w:"Guidare 🚗",t:"Manejar",o:["Manejar","Conducir","Pilotar","Guiar"],ej:"Guido con cura"},
       // Tiempo
       {cat:"☀️ Tempo",w:"Caldo 🌡️",t:"Caliente",o:["Caliente","Frío","Tibio","Húmedo"],ej:"Fa molto caldo"},
       {cat:"☀️ Tempo",w:"Freddo ❄️",t:"Frío",o:["Frío","Caliente","Tibio","Seco"],ej:"Fa freddo oggi"},
       {cat:"☀️ Tempo",w:"Vento 💨",t:"Viento",o:["Viento","Lluvia","Nieve","Tormenta"],ej:"C'è molto vento"},
-      {cat:"☀️ Tempo",w:"Neve ❄️",t:"Nieve",o:["Nieve","Hielo","Granizo","Lluvia"],ej:"Neve bianca"},
-      {cat:"☀️ Tempo",w:"Sole ☀️",t:"Sol",o:["Sol","Luna","Estrella","Nube"],ej:"Il sole splende"},
-      {cat:"☀️ Tempo",w:"Temporale ⛈️",t:"Tormenta",o:["Tormenta","Brisa","Viento","Lluvia"],ej:"Un forte temporale"},
-      // Transporte
-      {cat:"🚗 Trasporti",w:"Macchina 🚗",t:"Auto",o:["Auto","Camión","Bus","Moto"],ej:"La mia macchina"},
-      {cat:"🚗 Trasporti",w:"Autobus 🚌",t:"Bus",o:["Bus","Tren","Metro","Taxi"],ej:"Prendo l'autobus"},
-      {cat:"🚗 Trasporti",w:"Treno 🚂",t:"Tren",o:["Tren","Bus","Metro","Barco"],ej:"Il treno parte"},
-      {cat:"🚗 Trasporti",w:"Bicicletta 🚲",t:"Bicicleta",o:["Bicicleta","Moto","Patín","Scooter"],ej:"Vado in bicicletta"},
-      {cat:"🚗 Trasporti",w:"Aereo ✈️",t:"Avión",o:["Avión","Helicóptero","Globo","Cohete"],ej:"L'aereo parte"},
     ],
     dificil: [
       // Emociones
@@ -823,49 +565,25 @@ const VOCAB = {
       {cat:"😊 Emozioni",w:"Orgoglioso",t:"Orgulloso",o:["Orgulloso","Avergonzado","Celoso","Humilde"],ej:"Sono orgoglioso"},
       {cat:"😊 Emozioni",w:"Geloso",t:"Celoso",o:["Celoso","Orgulloso","Tranquilo","Feliz"],ej:"Sei geloso?"},
       {cat:"😊 Emozioni",w:"Stanco 😮‍💨",t:"Cansado",o:["Cansado","Descansado","Activo","Energético"],ej:"Sono stanco"},
-      {cat:"😊 Emozioni",w:"Emozionato 🎉",t:"Emocionado",o:["Emocionado","Aburrido","Cansado","Tranquilo"],ej:"Sono emozionato"},
-      {cat:"😊 Emozioni",w:"Curioso 🤔",t:"Curioso",o:["Curioso","Indiferente","Aburrido","Desinteresado"],ej:"Sono curioso"},
-      {cat:"😊 Emozioni",w:"Grato 🙏",t:"Agradecido",o:["Agradecido","Resentido","Indiferente","Ingrato"],ej:"Sono grato"},
-      {cat:"😊 Emozioni",w:"Solitario",t:"Solitario",o:["Solitario","Acompañado","Sociable","Amigable"],ej:"Mi sento solo"},
-      // Tecnología
-      {cat:"💻 Tecnologia",w:"Schermo 📱",t:"Pantalla",o:["Pantalla","Teclado","Ratón","Bocina"],ej:"Schermo rotto"},
-      {cat:"💻 Tecnologia",w:"Password 🔑",t:"Contraseña",o:["Contraseña","Usuario","Correo","Red"],ej:"Ho dimenticato la password"},
-      {cat:"💻 Tecnologia",w:"Software",t:"Software",o:["Software","Hardware","Sistema","Memoria"],ej:"Installa il software"},
-      {cat:"💻 Tecnologia",w:"Scaricare ⬇️",t:"Descargar",o:["Descargar","Subir","Instalar","Borrar"],ej:"Scarica l'app"},
-      {cat:"💻 Tecnologia",w:"Connessione 📶",t:"Conexión",o:["Conexión","Señal","Red","Bluetooth"],ej:"Nessuna connessione"},
-      {cat:"💻 Tecnologia",w:"Aggiornare 🔄",t:"Actualizar",o:["Actualizar","Restaurar","Reiniciar","Borrar"],ej:"Aggiorna il sistema"},
-      {cat:"💻 Tecnologia",w:"Batteria 🔋",t:"Batería",o:["Batería","Cargador","Cable","Adaptador"],ej:"Batteria scarica"},
       // Profesiones
       {cat:"👨‍⚕️ Professioni",w:"Medico 👨‍⚕️",t:"Médico",o:["Médico","Enfermero","Dentista","Farmacéutico"],ej:"Dal medico"},
       {cat:"👨‍⚕️ Professioni",w:"Insegnante 👩‍🏫",t:"Maestro",o:["Maestro","Alumno","Director","Tutor"],ej:"Brava insegnante"},
       {cat:"👨‍⚕️ Professioni",w:"Avvocato",t:"Abogado",o:["Abogado","Juez","Fiscal","Notario"],ej:"Ho bisogno di avvocato"},
       {cat:"👨‍⚕️ Professioni",w:"Cuoco 👨‍🍳",t:"Chef",o:["Chef","Mesero","Barista","Panadero"],ej:"Il cuoco cucina bene"},
-      {cat:"👨‍⚕️ Professioni",w:"Giornalista",t:"Periodista",o:["Periodista","Locutor","Editor","Redactor"],ej:"Una brava giornalista"},
-      {cat:"👨‍⚕️ Professioni",w:"Pompiere 🚒",t:"Bombero",o:["Bombero","Policía","Soldado","Rescatista"],ej:"Coraggioso pompiere"},
-      {cat:"👨‍⚕️ Professioni",w:"Pilota ✈️",t:"Piloto",o:["Piloto","Copiloto","Azafata","Mecánico"],ej:"Pilota commerciale"},
-      {cat:"👨‍⚕️ Professioni",w:"Architetto",t:"Arquitecto",o:["Arquitecto","Ingeniero","Diseñador","Constructor"],ej:"Un bravo architetto"},
       // Frases
       {cat:"💬 Frasi",w:"Per favore",t:"Por favor",o:["Por favor","Gracias","De nada","Perdón"],ej:"Per favore, aiutami"},
       {cat:"💬 Frasi",w:"Mi dispiace",t:"Lo siento",o:["Lo siento","Perdón","Disculpa","Excúsame"],ej:"Mi dispiace tanto"},
       {cat:"💬 Frasi",w:"Benvenuto",t:"Bienvenido",o:["Bienvenido","Hasta luego","Hola","Adiós"],ej:"Benvenuto a casa"},
       {cat:"💬 Frasi",w:"Complimenti 🎉",t:"Felicitaciones",o:["Felicitaciones","Condolencias","Saludos","Bendiciones"],ej:"Complimenti!"},
       {cat:"💬 Frasi",w:"Salute! 🥂",t:"Salud",o:["Salud","Brindis","Alegría","Celebración"],ej:"Salute! cin cin"},
-      {cat:"💬 Frasi",w:"In bocca al lupo",t:"Buena suerte",o:["Buena suerte","Bien hecho","Cuídate","Qué pena"],ej:"In bocca al lupo!"},
-      {cat:"💬 Frasi",w:"Figurati",t:"No hay problema",o:["No hay problema","Con gusto","Claro","Por supuesto"],ej:"Ma figurati!"},
       // Viajes
       {cat:"✈️ Viaggi",w:"Aeroporto ✈️",t:"Aeropuerto",o:["Aeropuerto","Puerto","Terminal","Estación"],ej:"All'aeroporto"},
       {cat:"✈️ Viaggi",w:"Passaporto 📕",t:"Pasaporte",o:["Pasaporte","Visa","Boleto","Maleta"],ej:"Il tuo passaporto"},
       {cat:"✈️ Viaggi",w:"Bagaglio 🧳",t:"Equipaje",o:["Equipaje","Maleta","Mochila","Bolso"],ej:"Bagaglio pesante"},
       {cat:"✈️ Viaggi",w:"Albergo 🏨",t:"Hotel",o:["Hotel","Hostal","Motel","Cabana"],ej:"Prenota l'albergo"},
-      {cat:"✈️ Viaggi",w:"Mappa 🗺️",t:"Mapa",o:["Mapa","Guía","Plano","Brújula"],ej:"Leggi la mappa"},
-      {cat:"✈️ Viaggi",w:"Biglietto 🎫",t:"Boleto",o:["Boleto","Pasaje","Entrada","Pase"],ej:"Compra il biglietto"},
-      {cat:"✈️ Viaggi",w:"Prenotazione",t:"Reservación",o:["Reservación","Confirmación","Cancelación","Solicitud"],ej:"Fai una prenotazione"},
       // Salud
       {cat:"🏥 Salute",w:"Mal di testa",t:"Dolor de cabeza",o:["Dolor de cabeza","Fiebre","Tos","Mareo"],ej:"Ho mal di testa"},
       {cat:"🏥 Salute",w:"Medicina 💊",t:"Medicina",o:["Medicina","Vitamina","Vacuna","Cirugía"],ej:"Prendi la medicina"},
-      {cat:"🏥 Salute",w:"Allergia",t:"Alergia",o:["Alergia","Intolerancia","Sensibilidad","Reacción"],ej:"Ho un'allergia"},
-      {cat:"🏥 Salute",w:"Operazione",t:"Cirugía",o:["Cirugía","Operación","Procedimiento","Tratamiento"],ej:"Un'operazione al cuore"},
-      {cat:"🏥 Salute",w:"Esercizio 🏋️",t:"Ejercicio",o:["Ejercicio","Deporte","Actividad","Entrenamiento"],ej:"Faccio esercizio"},
     ],
     experto: [
       {cat:"🎓 Avanzato",w:"Tuttavia",t:"Sin embargo",o:["Sin embargo","Por lo tanto","Es decir","Además"],ej:"Tuttavia, ho provato"},
@@ -876,75 +594,149 @@ const VOCAB = {
       {cat:"🎓 Avanzato",w:"Sopraffatto",t:"Abrumado",o:["Abrumado","Relajado","Motivado","Concentrado"],ej:"Mi sento sopraffatto"},
       {cat:"🎓 Avanzato",w:"Compromesso",t:"Compromiso",o:["Compromiso","Acuerdo","Conflicto","Negación"],ej:"Trovare un compromesso"},
       {cat:"🎓 Avanzato",w:"Nonostante",t:"A pesar de",o:["A pesar de","Aunque","Debido a","Por eso"],ej:"Nonostante tutto"},
-      {cat:"🎓 Avanzato",w:"Di conseguenza",t:"Por consiguiente",o:["Por consiguiente","Sin embargo","A pesar de","No obstante"],ej:"Di conseguenza, i prezzi salgono"},
-      {cat:"🎓 Avanzato",w:"Approssimativamente",t:"Aproximadamente",o:["Aproximadamente","Exactamente","Parcialmente","Totalmente"],ej:"Circa 100 persone"},
-      {cat:"🎓 Avanzato",w:"Riconoscere",t:"Reconocer",o:["Reconocer","Ignorar","Negar","Evitar"],ej:"Riconoscere i propri errori"},
-      {cat:"🎓 Avanzato",w:"Sottolineare",t:"Enfatizar",o:["Enfatizar","Minimizar","Ignorar","Suprimir"],ej:"Voglio sottolineare"},
-      {cat:"🎓 Avanzato",w:"Prospettiva",t:"Perspectiva",o:["Perspectiva","Opinión","Visión","Punto de vista"],ej:"Una prospettiva diversa"},
-      {cat:"🎓 Avanzato",w:"Implementare",t:"Implementar",o:["Implementar","Planear","Diseñar","Evaluar"],ej:"Implementare il piano"},
-      {cat:"🎓 Avanzato",w:"Fondamentale",t:"Fundamental",o:["Fundamental","Secundario","Opcional","Trivial"],ej:"Un diritto fondamentale"},
-      {cat:"🎓 Avanzato",w:"Innovativo",t:"Innovador",o:["Innovador","Tradicional","Conservador","Obsoleto"],ej:"Una soluzione innovativa"},
     ]
   }
 };
 
 // =========================================================
-// LIGAS
+// LIGAS Y NIVELES
 // =========================================================
 const LIGAS = [
-  {id:'bronco',nombre:'Liga Bronze 🥉',emoji:'🥉',clase:'bronco',desc:'Principiante · Palabras básicas',dif:'facil',niveles:10,pregsPorNivel:5,ptsDesbloqueo:0},
-  {id:'plata',nombre:'Liga Plata 🥈',emoji:'🥈',clase:'plata',desc:'Intermedio · Más vocabulario',dif:'medio',niveles:10,pregsPorNivel:7,ptsDesbloqueo:200},
-  {id:'oro',nombre:'Liga Oro 🥇',emoji:'🥇',clase:'oro',desc:'Avanzado · Frases y profesiones',dif:'dificil',niveles:10,pregsPorNivel:8,ptsDesbloqueo:600},
-  {id:'diamante',nombre:'Liga Diamante 💎',emoji:'💎',clase:'diamante',desc:'Experto · Vocabulario complejo',dif:'experto',niveles:5,pregsPorNivel:10,ptsDesbloqueo:1200}
+  {
+    id:'bronco', nombre:'Liga Bronze 🥉', emoji:'🥉',
+    clase:'bronco', desc:'Principiante · Palabras básicas',
+    dif:'facil', niveles:10, pregsPorNivel:5,
+    ptsDesbloqueo:0
+  },
+  {
+    id:'plata', nombre:'Liga Plata 🥈', emoji:'🥈',
+    clase:'plata', desc:'Intermedio · Más vocabulario',
+    dif:'medio', niveles:10, pregsPorNivel:7,
+    ptsDesbloqueo:200
+  },
+  {
+    id:'oro', nombre:'Liga Oro 🥇', emoji:'🥇',
+    clase:'oro', desc:'Avanzado · Frases y profesiones',
+    dif:'dificil', niveles:10, pregsPorNivel:8,
+    ptsDesbloqueo:600
+  },
+  {
+    id:'diamante', nombre:'Liga Diamante 💎', emoji:'💎',
+    clase:'diamante', desc:'Experto · Vocabulario complejo',
+    dif:'experto', niveles:5, pregsPorNivel:10,
+    ptsDesbloqueo:1200
+  }
 ];
 
 // =========================================================
 // ESTADO
 // =========================================================
 let G = {
-  lang:'en', puntajeTotal:0, estrellasTotal:0, progreso:{},
-  liga:null, nivelIdx:0,
-  cola:[], idxCola:0,
-  pregsRonda:5, pregActual:0,
-  golesRonda:0, ptsRonda:0,
-  historial:[], rachaActual:0,
-  respCorrecta:false, esperaDisparo:false, bloqueado:false,
-  power:0, powerDir:1, powerInt:null,
-  kickDir:null,
+  lang: 'en',
+  puntajeTotal: 0,
+  estrellasTotal: 0,
+  progreso: {}, // { 'bronco_0': {estrellas:3, pts:50}, ... }
+
+  // Juego activo
+  liga: null, nivelIdx: 0,
+  cola: [], idxCola: 0,
+  pregsRonda: 5, pregActual: 0,
+  golesRonda: 0, ptsRonda: 0,
+  historial: [],
+  rachaActual: 0,
+  respCorrecta: false,
+  esperaDisparo: false,
+  bloqueado: false,
+  power: 0, powerDir: 1, powerInt: null,
 };
 
-function guardar(){try{localStorage.setItem('penaltyIdiomasV2',JSON.stringify({puntajeTotal:G.puntajeTotal,estrellasTotal:G.estrellasTotal,progreso:G.progreso,lang:G.lang}));}catch(e){}}
-function cargar(){try{const d=JSON.parse(localStorage.getItem('penaltyIdiomasV2')||'{}');if(d.puntajeTotal)G.puntajeTotal=d.puntajeTotal;if(d.estrellasTotal)G.estrellasTotal=d.estrellasTotal;if(d.progreso)G.progreso=d.progreso;if(d.lang)G.lang=d.lang;}catch(e){}}
+// =========================================================
+// GUARDADO LOCAL
+// =========================================================
+function guardar() {
+  try {
+    localStorage.setItem('penaltyIdiomas', JSON.stringify({
+      puntajeTotal: G.puntajeTotal,
+      estrellasTotal: G.estrellasTotal,
+      progreso: G.progreso,
+      lang: G.lang
+    }));
+  } catch(e){}
+}
+function cargar() {
+  try {
+    const d = JSON.parse(localStorage.getItem('penaltyIdiomas') || '{}');
+    if(d.puntajeTotal) G.puntajeTotal = d.puntajeTotal;
+    if(d.estrellasTotal) G.estrellasTotal = d.estrellasTotal;
+    if(d.progreso) G.progreso = d.progreso;
+    if(d.lang) G.lang = d.lang;
+  } catch(e){}
+}
 
 // =========================================================
 // MAPA
 // =========================================================
-function renderMapa(){
-  document.querySelectorAll('.lbtn').forEach(b=>b.classList.remove('active'));
+function renderMapa() {
+  document.querySelectorAll('.lbtn').forEach(b => b.classList.remove('active'));
   document.querySelector(`.lbtn.${G.lang}`).classList.add('active');
-  document.getElementById('totalPts').textContent=G.puntajeTotal;
-  document.getElementById('totalEstrellas').textContent=G.estrellasTotal;
-  const cont=document.getElementById('mapContenido');
-  cont.innerHTML='';
-  LIGAS.forEach(liga=>{
-    const desbloqueada=G.puntajeTotal>=liga.ptsDesbloqueo;
-    const sec=document.createElement('div');sec.className='liga-section';
-    const hdr=document.createElement('div');hdr.className=`liga-header ${liga.clase}`;
-    hdr.innerHTML=`<div class="liga-icono">${liga.emoji}</div><div class="liga-info"><h3>${liga.nombre} ${!desbloqueada?'🔒':''}</h3><p>${desbloqueada?liga.desc:`Necesitas ${liga.ptsDesbloqueo} pts`}</p></div>`;
+  document.getElementById('totalPts').textContent = G.puntajeTotal;
+  document.getElementById('totalEstrellas').textContent = G.estrellasTotal;
+
+  const cont = document.getElementById('mapContenido');
+  cont.innerHTML = '';
+
+  LIGAS.forEach(liga => {
+    const desbloqueada = G.puntajeTotal >= liga.ptsDesbloqueo;
+    const sec = document.createElement('div');
+    sec.className = 'liga-section';
+
+    const hdr = document.createElement('div');
+    hdr.className = `liga-header ${liga.clase}`;
+    hdr.innerHTML = `
+      <div class="liga-icono">${liga.emoji}</div>
+      <div class="liga-info">
+        <h3>${liga.nombre} ${!desbloqueada ? '🔒' : ''}</h3>
+        <p>${desbloqueada ? liga.desc : `Necesitas ${liga.ptsDesbloqueo} pts para desbloquear`}</p>
+      </div>`;
     sec.appendChild(hdr);
-    if(desbloqueada){
-      const grid=document.createElement('div');grid.className='niveles-grid';
-      for(let i=0;i<liga.niveles;i++){
-        const key=`${liga.id}_${i}`;const prog=G.progreso[key];
-        const completado=prog&&prog.estrellas>0;const perfecto=prog&&prog.estrellas===3;
-        let disponible=(i===0);
-        if(i>0){const kA=`${liga.id}_${i-1}`;disponible=G.progreso[kA]&&G.progreso[kA].estrellas>0;}
-        const card=document.createElement('div');
-        const esActual=disponible&&!completado;
-        card.className=`nivel-card ${!disponible?'bloqueado':perfecto?'perfecto':completado?'completado':esActual?'actual':'disponible'}`;
-        const est=prog?'⭐'.repeat(prog.estrellas)+'☆'.repeat(3-prog.estrellas):'☆☆☆';
-        card.innerHTML=`<div class="nnum">${disponible?(i+1):''}</div><div class="nestrellas">${completado?est:''}</div>${!disponible?'<div class="nbloqueo">🔒</div>':''}<div class="ntip">${liga.nombre} · Nivel ${i+1}</div>`;
-        if(disponible)card.onclick=()=>iniciarJuego(liga,i);
+
+    if(desbloqueada) {
+      const grid = document.createElement('div');
+      grid.className = 'niveles-grid';
+
+      for(let i = 0; i < liga.niveles; i++) {
+        const key = `${liga.id}_${i}`;
+        const prog = G.progreso[key];
+        const completado = prog && prog.estrellas > 0;
+        const perfecto = prog && prog.estrellas === 3;
+
+        // Determinar si disponible
+        let disponible = (i === 0);
+        if(i > 0) {
+          const keyAnterior = `${liga.id}_${i-1}`;
+          disponible = G.progreso[keyAnterior] && G.progreso[keyAnterior].estrellas > 0;
+        }
+
+        const card = document.createElement('div');
+        const esActual = disponible && !completado;
+        card.className = `nivel-card ${
+          !disponible ? 'bloqueado' :
+          perfecto ? 'perfecto' :
+          completado ? 'completado' :
+          esActual ? 'actual' : 'disponible'
+        }`;
+
+        const estrellas = prog ? '⭐'.repeat(prog.estrellas) + '☆'.repeat(3-prog.estrellas) : '☆☆☆';
+
+        card.innerHTML = `
+          <div class="nnum">${disponible ? (i+1) : ''}</div>
+          <div class="nestrellas">${completado ? estrellas : ''}</div>
+          ${!disponible ? '<div class="nbloqueo">🔒</div>' : ''}
+          <div class="ntip">${liga.nombre} · Nivel ${i+1}</div>`;
+
+        if(disponible) {
+          card.onclick = () => iniciarJuego(liga, i);
+        }
         grid.appendChild(card);
       }
       sec.appendChild(grid);
@@ -954,284 +746,319 @@ function renderMapa(){
 }
 
 // =========================================================
-// JUEGO
+// INICIAR JUEGO
 // =========================================================
-function iniciarJuego(liga,nivelIdx){
-  G.liga=liga;G.nivelIdx=nivelIdx;G.pregsRonda=liga.pregsPorNivel;
-  G.pregActual=0;G.golesRonda=0;G.ptsRonda=0;G.historial=[];G.rachaActual=0;
-  const pool=[...(VOCAB[G.lang][liga.dif]||[])];
-  for(let i=pool.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]];}
-  G.cola=pool;G.idxCola=0;
-  document.getElementById('gameNivelLabel').textContent=`${liga.emoji} NIVEL ${nivelIdx+1}`;
-  const difNames={facil:'🟢 FÁCIL',medio:'🟡 MEDIO',dificil:'🔴 DIFÍCIL',experto:'💎 EXPERTO'};
-  const difEl=document.getElementById('difLabel');
-  difEl.textContent=difNames[liga.dif];difEl.className='';difEl.id='difLabel';
-  difEl.classList.add({facil:'facil',medio:'medio',dificil:'dificil',experto:'experto'}[liga.dif]);
-  document.getElementById('sbTotal').textContent=liga.pregsPorNivel;
-  document.getElementById('sbGoles').textContent='0';
-  showScreen('gameScreen');
-  cargarPregunta();actualizarGameUI();
-}
+function iniciarJuego(liga, nivelIdx) {
+  G.liga = liga;
+  G.nivelIdx = nivelIdx;
+  G.pregsRonda = liga.pregsPorNivel;
+  G.pregActual = 0;
+  G.golesRonda = 0;
+  G.ptsRonda = 0;
+  G.historial = [];
+  G.rachaActual = 0;
 
-function cargarPregunta(){
-  if(G.idxCola>=G.cola.length){
-    for(let i=G.cola.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[G.cola[i],G.cola[j]]=[G.cola[j],G.cola[i]];}
-    G.idxCola=0;
+  // Preparar cola del idioma y dificultad
+  const pool = [...(VOCAB[G.lang][liga.dif] || [])];
+  // Barajar
+  for(let i = pool.length-1; i > 0; i--) {
+    const j = Math.floor(Math.random()*(i+1));
+    [pool[i],pool[j]] = [pool[j],pool[i]];
   }
-  const w=G.cola[G.idxCola];
-  G.respCorrecta=false;G.esperaDisparo=false;G.bloqueado=false;G.kickDir=null;
-  document.getElementById('catLabel').textContent=w.cat+' — ¿Cómo se dice?';
-  document.getElementById('wordBig').textContent=w.w;
-  document.getElementById('wordEj').textContent='"'+w.ej+'"';
-  document.getElementById('resTexto').textContent='';document.getElementById('resTexto').className='';
-  document.getElementById('comboDiv').textContent='';document.getElementById('ptsFlotante').textContent='';
+  G.cola = pool;
+  G.idxCola = 0;
 
-  const opts=[...w.o].sort(()=>Math.random()-.5);
-  const cont=document.getElementById('opciones');cont.innerHTML='';
-  opts.forEach(opt=>{
-    const btn=document.createElement('button');btn.className='opt';btn.textContent=opt;
-    btn.onclick=()=>elegir(opt,btn,w);cont.appendChild(btn);
-  });
-  document.getElementById('zonas').style.display='none';
-  document.getElementById('powerSec').style.display='none';
+  // UI
+  document.getElementById('gameNivelLabel').textContent = `${liga.emoji} NIVEL ${nivelIdx+1}`;
+  const difNames = {facil:'🟢 FÁCIL', medio:'🟡 MEDIO', dificil:'🔴 DIFÍCIL', experto:'💎 EXPERTO'};
+  const difEl = document.getElementById('difLabel');
+  difEl.textContent = difNames[liga.dif];
+  difEl.className = '';
+  difEl.id = 'difLabel';
+  const difClases = {facil:'facil', medio:'medio', dificil:'dificil', experto:'experto'};
+  difEl.classList.add(difClases[liga.dif]);
 
-  // Reset balón y portero
-  resetCampo();
-  actualizarDots();actualizarGameUI();
+  showScreen('gameScreen');
+  cargarPregunta();
+  actualizarGameUI();
 }
 
-function resetCampo(){
-  const balon=document.getElementById('balon');
-  balon.style.transition='none';
-  balon.className='';balon.textContent='⚽';
-  balon.style.cssText='position:absolute;bottom:20px;left:50%;transform:translateX(-50%);font-size:28px;z-index:4;filter:drop-shadow(0 4px 8px rgba(0,0,0,.7));';
-  const arq=document.getElementById('arquero');
-  arq.className='';arq.style.cssText='position:absolute;top:14px;left:50%;transform:translateX(-50%);font-size:34px;transition:left .35s cubic-bezier(.34,1.56,.64,1),transform .35s,font-size .2s;z-index:3;filter:drop-shadow(0 3px 6px rgba(0,0,0,.6));';
-  document.getElementById('canchaMsg').textContent='';
-  document.getElementById('canchaMsg').className='';
-  document.getElementById('arco').className='';
-  document.getElementById('canchaWrap').className='';
+// =========================================================
+// PREGUNTA
+// =========================================================
+function cargarPregunta() {
+  if(G.idxCola >= G.cola.length) {
+    // reiniciar cola barajada
+    for(let i = G.cola.length-1; i > 0; i--) {
+      const j = Math.floor(Math.random()*(i+1));
+      [G.cola[i],G.cola[j]] = [G.cola[j],G.cola[i]];
+    }
+    G.idxCola = 0;
+  }
+
+  const w = G.cola[G.idxCola];
+  G.respCorrecta = false;
+  G.esperaDisparo = false;
+  G.bloqueado = false;
+
+  document.getElementById('catLabel').textContent = w.cat + ' — ¿Cómo se dice?';
+  document.getElementById('wordBig').textContent = w.w;
+  document.getElementById('wordEj').textContent = '"' + w.ej + '"';
+  document.getElementById('resTexto').textContent = '';
+  document.getElementById('resTexto').className = '';
+  document.getElementById('comboDiv').textContent = '';
+  document.getElementById('ptsFlotante').textContent = '';
+
+  const opts = [...w.o].sort(() => Math.random()-0.5);
+  const cont = document.getElementById('opciones');
+  cont.innerHTML = '';
+  opts.forEach(opt => {
+    const btn = document.createElement('button');
+    btn.className = 'opt';
+    btn.textContent = opt;
+    btn.onclick = () => elegir(opt, btn, w);
+    cont.appendChild(btn);
+  });
+
+  document.getElementById('zonas').style.display = 'none';
+  document.getElementById('powerSec').style.display = 'none';
+
+  // Reset campo
+  const balon = document.getElementById('balon');
+  balon.style.left = '50%'; balon.style.transform = 'translateX(-50%)'; balon.style.bottom = '18px';
+  document.getElementById('arquero').style.left = '50%'; document.getElementById('arquero').style.transform = 'translateX(-50%)';
+
+  actualizarDots();
+  actualizarGameUI();
 }
 
-function elegir(opt,btn,w){
-  if(G.bloqueado||G.esperaDisparo)return;
-  G.respCorrecta=(opt===w.t);G.bloqueado=true;
-  document.querySelectorAll('.opt').forEach(b=>{
-    b.disabled=true;
-    if(b.textContent===w.t)b.classList.add('correcta');
-    else if(b===btn&&!G.respCorrecta)b.classList.add('incorrecta');
+function elegir(opt, btn, w) {
+  if(G.bloqueado || G.esperaDisparo) return;
+  G.respCorrecta = (opt === w.t);
+  G.bloqueado = true;
+
+  document.querySelectorAll('.opt').forEach(b => {
+    b.disabled = true;
+    if(b.textContent === w.t) b.classList.add('correcta');
+    else if(b === btn && !G.respCorrecta) b.classList.add('incorrecta');
   });
-  if(G.respCorrecta){
-    G.rachaActual++;soundCorrect();lanzarEmojis(['⭐','✅','💯']);
-    document.getElementById('resTexto').textContent='¡Correcto! Ahora dispara 🎯';
-    if(G.rachaActual>=3)document.getElementById('comboDiv').textContent=`🔥 COMBO x${G.rachaActual}`;
-  }else{
-    G.rachaActual=0;soundWrong();
-    document.getElementById('resTexto').textContent=`Era "${w.t}" 😅 ¡Igual dispara!`;
+
+  if(G.respCorrecta) {
+    G.rachaActual++;
+    lanzarEmojis(['⭐','✅','💯']);
+    document.getElementById('resTexto').textContent = '¡Correcto! Ahora dispara 🎯';
+    if(G.rachaActual >= 3) document.getElementById('comboDiv').textContent = `🔥 COMBO x${G.rachaActual}`;
+  } else {
+    G.rachaActual = 0;
+    document.getElementById('resTexto').textContent = `Era "${w.t}" 😅 ¡Igual dispara!`;
   }
   actualizarGameUI();
-  setTimeout(()=>{G.esperaDisparo=true;document.getElementById('zonas').style.display='flex';document.getElementById('powerSec').style.display='block';iniciarPower();},500);
+
+  setTimeout(() => {
+    G.esperaDisparo = true;
+    document.getElementById('zonas').style.display = 'flex';
+    document.getElementById('powerSec').style.display = 'block';
+    iniciarPower();
+  }, 500);
 }
 
 // =========================================================
-// POWER
+// POWER BAR
 // =========================================================
-function iniciarPower(){
-  G.power=0;G.powerDir=1;clearInterval(G.powerInt);
-  const vel={facil:55,medio:45,dificil:35,experto:28}[G.liga.dif]||40;
-  G.powerInt=setInterval(()=>{
-    G.power+=G.powerDir*4;
-    if(G.power>=100){G.power=100;G.powerDir=-1;}
-    if(G.power<=0){G.power=0;G.powerDir=1;}
-    const f=document.getElementById('powerFill');
-    f.style.width=G.power+'%';
-    if(G.power>65)f.style.background='linear-gradient(90deg,#ef4444,#f97316)';
-    else if(G.power>35)f.style.background='linear-gradient(90deg,#fbbf24,#22c55e)';
-    else f.style.background='linear-gradient(90deg,#64748b,#fbbf24)';
-  },vel);
-}
-
-// =========================================================
-// DISPARO — animación mejorada
-// =========================================================
-function disparar(dir){
-  if(!G.esperaDisparo)return;
-  G.esperaDisparo=false;G.kickDir=dir;
+function iniciarPower() {
+  G.power = 0; G.powerDir = 1;
   clearInterval(G.powerInt);
-  document.getElementById('zonas').style.display='none';
-  document.getElementById('powerSec').style.display='none';
+  const difs = {facil:55, medio:45, dificil:35, experto:28};
+  const vel = difs[G.liga.dif] || 40;
+  G.powerInt = setInterval(() => {
+    G.power += G.powerDir * 4;
+    if(G.power >= 100){ G.power = 100; G.powerDir = -1; }
+    if(G.power <= 0){ G.power = 0; G.powerDir = 1; }
+    const f = document.getElementById('powerFill');
+    f.style.width = G.power + '%';
+    if(G.power > 65) f.style.background = 'linear-gradient(90deg,#ef4444,#f97316)';
+    else if(G.power > 35) f.style.background = 'linear-gradient(90deg,#fbbf24,#22c55e)';
+    else f.style.background = 'linear-gradient(90deg,#64748b,#fbbf24)';
+  }, vel);
+}
 
-  const pow=G.power;
-  const dirs=['izq','cen','der'];
-  const arqueroDir=dirs[Math.floor(Math.random()*3)];
-  soundKick();
-  spawnKickParticles();
+// =========================================================
+// DISPARO
+// =========================================================
+function disparar(dir) {
+  if(!G.esperaDisparo) return;
+  G.esperaDisparo = false;
+  clearInterval(G.powerInt);
+  document.getElementById('zonas').style.display = 'none';
+  document.getElementById('powerSec').style.display = 'none';
 
-  // Mover portero
-  const arq=document.getElementById('arquero');
-  let arqLeft,arqTx;
-  if(arqueroDir==='izq'){arqLeft='18%';arqTx='translateX(0)';}
-  else if(arqueroDir==='cen'){arqLeft='50%';arqTx='translateX(-50%)';}
-  else{arqLeft='82%';arqTx='translateX(-100%)';}
-  arq.style.left=arqLeft;arq.style.transform=arqTx;
+  const pow = G.power;
+  const dirs = ['izq','cen','der'];
+  const arqueroDir = dirs[Math.floor(Math.random()*3)];
 
-  // Calcular destino del balón
-  let bxEnd,byEnd,bxMid,byMid;
-  if(dir==='izq'){bxEnd='calc(18% - 50%)';byEnd='-135px';}
-  else if(dir==='cen'){bxEnd='0%';byEnd='-140px';}
-  else{bxEnd='calc(82% - 50%)';byEnd='-130px';}
-  // Punto medio con arco
-  const mx={izq:'calc(5% - 50%)',cen:'-5%',der:'calc(70% - 50%)'}[dir];
-  byMid='-70px';
+  const arq = document.getElementById('arquero');
+  if(arqueroDir==='izq'){arq.style.left='18%';arq.style.transform='translateX(0)';}
+  else if(arqueroDir==='cen'){arq.style.left='50%';arq.style.transform='translateX(-50%)';}
+  else{arq.style.left='82%';arq.style.transform='translateX(-100%)';}
 
-  const balon=document.getElementById('balon');
-  balon.style.setProperty('--bx-mid',mx);
-  balon.style.setProperty('--by-mid',byMid);
-  balon.style.setProperty('--bx-end',bxEnd);
-  balon.style.setProperty('--by-end',byEnd);
-  balon.style.setProperty('--kick-dur','.55s');
-  balon.classList.add('kick');
+  const bal = document.getElementById('balon');
+  if(dir==='izq'){bal.style.left='18%';bal.style.transform='translateX(0)';}
+  else if(dir==='cen'){bal.style.left='50%';bal.style.transform='translateX(-50%)';}
+  else{bal.style.left='82%';bal.style.transform='translateX(-100%)';}
+  bal.style.bottom = '125px';
 
-  // Determinar gol
-  const mismo=(dir===arqueroDir);
-  const suficiente=pow>=20;
-  let gol=!mismo&&suficiente&&G.respCorrecta;
-  if(!G.respCorrecta&&!mismo&&suficiente&&Math.random()<0.25)gol=true;
+  const mismo = (dir===arqueroDir);
+  const suficiente = pow >= 20;
+  let gol = !mismo && suficiente && G.respCorrecta;
+  if(!G.respCorrecta && !mismo && suficiente && Math.random()<0.25) gol = true;
 
-  if(navigator.vibrate)navigator.vibrate(gol?[80,40,80]:150);
+  if(navigator.vibrate) navigator.vibrate(gol ? [80,40,80] : 150);
 
-  setTimeout(()=>{
-    const res=document.getElementById('resTexto');
-    let pts=0;
-    if(gol){
-      res.textContent='⚽ ¡GOOOOOL! 🔥';res.className='gol';
-      soundGol();
-      flashRed();addGolRing();
-      showCanchaMsg('GOOOL!','gol');
-      document.getElementById('canchaWrap').classList.add('shake');
-      pts=G.respCorrecta?10+Math.floor(pow/10)+(G.rachaActual>2?G.rachaActual*3:0):3;
-      G.puntajeTotal+=pts;G.ptsRonda+=pts;G.golesRonda++;G.historial.push(true);
+  setTimeout(() => {
+    const res = document.getElementById('resTexto');
+    let pts = 0;
+
+    if(gol) {
+      res.textContent = '⚽ ¡GOOOOOL! 🔥';
+      res.className = 'gol';
+      pts = G.respCorrecta ?
+        10 + Math.floor(pow/10) + (G.rachaActual > 2 ? G.rachaActual * 3 : 0) :
+        3;
+      G.puntajeTotal += pts;
+      G.ptsRonda += pts;
+      G.golesRonda++;
+      G.historial.push(true);
       lanzarEmojis(['⚽','🔥','🎉','💥','⭐']);
-      document.getElementById('ptsFlotante').textContent=`+${pts} pts`;
-      arq.classList.add('miss-anim');
-      document.getElementById('sbGoles').textContent=G.golesRonda;
-    }else{
-      res.textContent=pow<20?'😴 ¡MÁS POTENCIA!':'🧤 ¡ATAJADO!';res.className='fail';
-      soundSave();
-      showCanchaMsg(pow<20?'DÉBIL':'ATAJADO','fail');
-      if(pow>=20){
-        arq.classList.add('save-anim');
-        // rebote del balón
-        setTimeout(()=>balon.classList.add('saved'),100);
-      }
-      if(G.respCorrecta){pts=5;G.puntajeTotal+=pts;G.ptsRonda+=pts;document.getElementById('ptsFlotante').textContent=`+${pts} pts`;}
+      document.getElementById('ptsFlotante').textContent = `+${pts} pts`;
+    } else {
+      res.textContent = pow < 20 ? '😴 ¡MÁS POTENCIA!' : '🧤 ¡ATAJADO!';
+      res.className = 'fail';
+      if(G.respCorrecta){ pts = 5; G.puntajeTotal += pts; G.ptsRonda += pts; document.getElementById('ptsFlotante').textContent = `+${pts} pts`; }
       G.historial.push(false);
     }
-    actualizarGameUI();G.pregActual++;actualizarDotsPost(gol);
-    setTimeout(()=>{
-      if(G.pregActual>=G.pregsRonda){setTimeout(mostrarModal,800);}
-      else{G.idxCola++;cargarPregunta();}
-    },1400);
-  },600);
+
+    actualizarGameUI();
+    G.pregActual++;
+    actualizarDotsPost(gol);
+
+    setTimeout(() => {
+      bal.style.bottom = '18px';
+      if(G.pregActual >= G.pregsRonda) {
+        setTimeout(mostrarModal, 800);
+      } else {
+        G.idxCola++;
+        cargarPregunta();
+      }
+    }, 1200);
+  }, 650);
 }
 
 // =========================================================
-// EFECTOS VISUALES CANCHA
+// MODAL RESUMEN
 // =========================================================
-function flashRed(){
-  const arco=document.getElementById('arco');
-  arco.classList.add('gol-flash');
-  setTimeout(()=>arco.classList.remove('gol-flash'),600);
+function mostrarModal() {
+  const porc = G.golesRonda / G.pregsRonda;
+  const ests = porc >= 0.85 ? 3 : porc >= 0.55 ? 2 : porc >= 0.3 ? 1 : 0;
+
+  // Guardar progreso
+  const key = `${G.liga.id}_${G.nivelIdx}`;
+  const prev = G.progreso[key];
+  const nuevaEst = Math.max(ests, prev ? prev.estrellas : 0);
+  const nuevaEs = !prev || nuevaEst > prev.estrellas;
+  if(nuevaEs) G.estrellasTotal += (nuevaEst - (prev ? prev.estrellas : 0));
+  G.progreso[key] = { estrellas: nuevaEst, pts: G.ptsRonda };
+  guardar();
+
+  const msgs = ['¡Sigue practicando! 💪','¡Bien hecho! 👍','¡Muy bien! ⭐','¡PERFECTO! 🏆'];
+  const emojis = ['😤','👍','⭐','🏆'];
+  document.getElementById('modalEmoji').textContent = emojis[ests];
+  document.getElementById('modalTitulo').textContent = `NIVEL ${G.nivelIdx+1} LISTO`;
+  document.getElementById('modalEstrellas').textContent = '⭐'.repeat(ests) + '☆'.repeat(3-ests);
+  document.getElementById('modalStats').textContent = `⚽ Goles: ${G.golesRonda}/${G.pregsRonda} · 🎯 Puntos: ${G.ptsRonda}`;
+  document.getElementById('modalMsg').textContent = msgs[ests];
+
+  // Botón siguiente: habilitar si hay más niveles
+  const btnSig = document.querySelector('.mbtn.pri');
+  const hayMas = G.nivelIdx + 1 < G.liga.niveles;
+  btnSig.style.display = hayMas ? 'block' : 'none';
+
+  document.getElementById('modal').classList.add('open');
 }
 
-function addGolRing(){
-  const wrap=document.getElementById('cancha');
-  const ring=document.createElement('div');
-  ring.className='gol-ring';
-  ring.style.left='50%';ring.style.top='40%';ring.style.position='absolute';
-  wrap.appendChild(ring);
-  setTimeout(()=>ring.remove(),900);
+function reintentar() {
+  document.getElementById('modal').classList.remove('open');
+  iniciarJuego(G.liga, G.nivelIdx);
 }
 
-function showCanchaMsg(txt,cls){
-  const el=document.getElementById('canchaMsg');
-  el.textContent=txt;el.className=`show ${cls}`;
-  setTimeout(()=>{el.className='';el.textContent='';},900);
-}
-
-function spawnKickParticles(){
-  const wrap=document.getElementById('cancha');
-  const emojis=['💨','✨','🌟','⚡'];
-  for(let i=0;i<5;i++){
-    const p=document.createElement('div');
-    p.className='kick-particle';
-    p.textContent=emojis[Math.floor(Math.random()*emojis.length)];
-    const px=(Math.random()-0.5)*80;const py=-(30+Math.random()*50);
-    p.style.setProperty('--px',px+'px');p.style.setProperty('--py',py+'px');
-    p.style.left=(40+Math.random()*20)+'%';p.style.bottom='30px';
-    wrap.appendChild(p);
-    setTimeout(()=>p.remove(),900);
+function siguienteNivel() {
+  document.getElementById('modal').classList.remove('open');
+  const nextIdx = G.nivelIdx + 1;
+  if(nextIdx < G.liga.niveles) {
+    iniciarJuego(G.liga, nextIdx);
+  } else {
+    volverMapa();
   }
 }
 
-// =========================================================
-// MODAL
-// =========================================================
-function mostrarModal(){
-  const porc=G.golesRonda/G.pregsRonda;
-  const ests=porc>=0.85?3:porc>=0.55?2:porc>=0.3?1:0;
-  const key=`${G.liga.id}_${G.nivelIdx}`;const prev=G.progreso[key];
-  const nuevaEst=Math.max(ests,prev?prev.estrellas:0);
-  if(!prev||nuevaEst>prev.estrellas)G.estrellasTotal+=(nuevaEst-(prev?prev.estrellas:0));
-  G.progreso[key]={estrellas:nuevaEst,pts:G.ptsRonda};guardar();
-  const msgs=['¡Sigue practicando! 💪','¡Bien hecho! 👍','¡Muy bien! ⭐','¡PERFECTO! 🏆'];
-  const emojis=['😤','👍','⭐','🏆'];
-  document.getElementById('modalEmoji').textContent=emojis[ests];
-  document.getElementById('modalTitulo').textContent=`NIVEL ${G.nivelIdx+1} LISTO`;
-  document.getElementById('modalEstrellas').textContent='⭐'.repeat(ests)+'☆'.repeat(3-ests);
-  document.getElementById('modalStats').textContent=`⚽ Goles: ${G.golesRonda}/${G.pregsRonda} · 🎯 Puntos: ${G.ptsRonda}`;
-  document.getElementById('modalMsg').textContent=msgs[ests];
-  const btnSig=document.querySelector('.mbtn.pri');
-  btnSig.style.display=G.nivelIdx+1<G.liga.niveles?'block':'none';
-  document.getElementById('modal').classList.add('open');
+function volverMapa() {
+  clearInterval(G.powerInt);
+  document.getElementById('modal').classList.remove('open');
+  showScreen('mapScreen');
+  renderMapa();
 }
-function reintentar(){document.getElementById('modal').classList.remove('open');iniciarJuego(G.liga,G.nivelIdx);}
-function siguienteNivel(){document.getElementById('modal').classList.remove('open');const n=G.nivelIdx+1;if(n<G.liga.niveles)iniciarJuego(G.liga,n);else volverMapa();}
-function volverMapa(){clearInterval(G.powerInt);document.getElementById('modal').classList.remove('open');showScreen('mapScreen');renderMapa();}
 
 // =========================================================
 // UI HELPERS
 // =========================================================
-function actualizarGameUI(){
-  document.getElementById('gPts').textContent=G.puntajeTotal;
-  document.getElementById('gRacha').textContent=G.rachaActual;
-  const p=(G.pregActual/G.pregsRonda)*100;
-  document.getElementById('progRondaFill').style.width=p+'%';
-  document.getElementById('progRondaTexto').textContent=`${G.pregActual}/${G.pregsRonda}`;
+function actualizarGameUI() {
+  document.getElementById('gPts').textContent = G.puntajeTotal;
+  document.getElementById('gRacha').textContent = G.rachaActual;
+  const progPorc = (G.pregActual / G.pregsRonda) * 100;
+  document.getElementById('progRondaFill').style.width = progPorc + '%';
+  document.getElementById('progRondaTexto').textContent = `${G.pregActual}/${G.pregsRonda}`;
 }
-function actualizarDots(){
-  const cont=document.getElementById('rachaDots');cont.innerHTML='';
-  for(let i=0;i<G.pregsRonda;i++){
-    const d=document.createElement('div');d.className='rdot';
-    if(i<G.historial.length)d.classList.add(G.historial[i]?'ok':'fail');
-    else if(i===G.historial.length)d.classList.add('now');
+
+function actualizarDots() {
+  const cont = document.getElementById('rachaDots');
+  cont.innerHTML = '';
+  for(let i=0; i<G.pregsRonda; i++) {
+    const d = document.createElement('div');
+    d.className = 'rdot';
+    if(i < G.historial.length) d.classList.add(G.historial[i]?'ok':'fail');
+    else if(i === G.historial.length) d.classList.add('now');
     cont.appendChild(d);
   }
 }
-function actualizarDotsPost(gol){
-  const dots=document.querySelectorAll('.rdot');
-  const idx=G.historial.length-1;
-  if(dots[idx]){dots[idx].classList.remove('now');dots[idx].classList.add(gol?'ok':'fail');}
-  if(dots[idx+1])dots[idx+1].classList.add('now');
+
+function actualizarDotsPost(gol) {
+  const dots = document.querySelectorAll('.rdot');
+  const idx = G.historial.length - 1;
+  if(dots[idx]){ dots[idx].classList.remove('now'); dots[idx].classList.add(gol?'ok':'fail'); }
+  if(dots[idx+1]) dots[idx+1].classList.add('now');
 }
-function showScreen(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo(0,0);}
-function setLang(lang){G.lang=lang;guardar();renderMapa();}
-function lanzarEmojis(lista){
-  lista.forEach((em,i)=>setTimeout(()=>{
-    const el=document.createElement('div');el.className='efloat';el.textContent=em;
-    el.style.left=(15+Math.random()*70)+'vw';el.style.top=(20+Math.random()*50)+'vh';
-    document.body.appendChild(el);setTimeout(()=>el.remove(),1200);
-  },i*100));
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+function setLang(lang) {
+  G.lang = lang;
+  guardar();
+  renderMapa();
+}
+
+function lanzarEmojis(lista) {
+  lista.forEach((em,i) => setTimeout(() => {
+    const el = document.createElement('div');
+    el.className = 'efloat';
+    el.textContent = em;
+    el.style.left = (15+Math.random()*70)+'vw';
+    el.style.top = (20+Math.random()*50)+'vh';
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 1200);
+  }, i*100));
 }
 
 // =========================================================
